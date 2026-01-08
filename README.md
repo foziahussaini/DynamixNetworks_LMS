@@ -27,9 +27,8 @@ A web-based Learning Management System (LMS) build with HTML,CSS, and JavaScript
 
 # How to Run the Project
 
-1**Clone the repository**
+1 **Clone the repository**
+
 git clone https://github.com/foziahussaini/DynamixNetworks_LMS.git
 
 
-1 Clone the repository 
-git clone 
