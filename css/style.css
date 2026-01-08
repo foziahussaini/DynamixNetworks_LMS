@@ -5,6 +5,11 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+:root{
+    --bg-color: rgba(108, 144, 144, 0.753);
+    --font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body{
     width: 100%;
     margin: 0;
@@ -28,7 +33,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-color: rgba(170, 182, 194, 0.283);
+    background-color: var(--bg-color);
     gap: 3rem;
 }
 
@@ -190,7 +195,7 @@ header{
         font-size: 52px;
         font-weight: bold;
         padding-top: 1rem;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: var(--font-family);
     }
 
     >h3{
@@ -239,4 +244,52 @@ header{
     >p{
         line-height: normal;
     }
+}
+
+/* main part section three */
+.main-container .section3{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.plans{
+     display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* main part section four */
+.main-container .section4{
+    width: 100%;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--bg-color);
+
+    >h1{
+        font-weight: 700;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    >p{
+        font-family: var(--font-family);
+        font-size: 20px;
+    }
+}
+
+.section4 .emailbtn{
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+     >a{
+        text-decoration: none;
+     }
 }
