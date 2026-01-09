@@ -12,12 +12,22 @@
         <!-- subheader -->
          <div class="sub-header">
             <div class="language">
-                <i class="fa-duotone fa-solid fa-earth-americas fa-s" style="--fa-primary-opacity: 0.4; --fa-secondary-opacity: 1; margin-top: 0.2rem;"></i>
-                <span class="lang">EN</span> 
+                <span id="language-icon" onclick="toggleDropdown"><i class="fa-duotone fa-solid fa-earth-americas fa-s" style="--fa-primary-opacity: 0.4; --fa-secondary-opacity: 1; margin-top: 0.2rem;"></i></span>
+                <span data-translate class="lang" id="lang-text">EN</span> 
+            </div>
+            <div class="dropdown-lang" id="dropdown-lang">
+                <ul id="language-option">
+                    <li data-lang="en" value="en">English</li>
+                    <li data-lang="fa" value="fa">فارسی</li>
+                    <li data-lang="ps" value="ps">پښتو</li>
+                    <li data-lang="hi" value="hi">Indian</li>
+                    <li data-lang="fr" value="fr">Français</li>
+                    <li data-lang="de" value="de">Deutsch</li>
+                </ul>
             </div>
             <div class="login">
                 <i class="fa-regular fa-user fa-xs" style="margin-top: 0.7rem;"></i>
-                <span class="user">log in</span>
+                <span data-translate data-key="login" class="user">log in</span>
             </div>
         </div>
         <!-- main header -->
@@ -27,10 +37,10 @@
             </div>
             <div class="navBar">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Explore</li>
-                    <li>Contact</li>
+                    <li data-translate data-key="home">Home</li>
+                    <li data-translate data-key="about">About</li>
+                    <li data-translate data-key="explore">Explore</li>
+                    <li data-translate data-key="contact">Contact</li>
                 </ul>
             </div>
             <button class="dynamix-btn"><a href="#">Why Dynamix</a></button>
@@ -47,10 +57,10 @@
     <!-- section one -->
         <div class="section1">
             <div class="title">
-                <h1>Dynamix Networks</h1>
-                <h3>We are future-proofing<br> non-tech hiring with ownable <br>ideas and scable systems</h3>
-                <p>If you are tired of cookies-cutter roles and want to build something that <br>lasts, you are inthe right place.</p>
-                <button>Our Services</button>
+                <h1 data-translate data-key="title" >Dynamix Networks</h1>
+                <h3 data-translate data-key="sub-title" >We are future-proofing<br> non-tech hiring with ownable <br>ideas and scable systems</h3>
+                <p data-translate data-key="sub-title2" >If you are tired of cookies-cutter roles and want to build something that <br>lasts, you are inthe right place.</p>
+                <button data-translate data-key="services">Our Services</button>
             </div>
             <div class="image">
                 <img src="./images/lMS image1.jpg" alt="">
@@ -58,8 +68,8 @@
         </div>
     <!-- section two -->
         <div class="section2">
-            <h4>About Us</h4>
-            <p>
+            <h4 data-translate data-key="about_us">About Us</h4>
+            <p data-translate data-key="mission">
                 At Dynamix Networks, we specialize in building bold, human-centered solutions for real-world challenges.
                 Whether it’s crafting standout brand identities, designing independent intern projects, or reimagining
                 how tech talent is discovered and empowered, we believe in originality over convention and clarity over complexity.
@@ -70,12 +80,88 @@
         </div>
     <!-- section three -->
         <div class="section3">
-            <h2 class="plan-title">Choose the Right Development Plan for success</h2>
+            <div class="topic">
+                <h1 data-translate data-key="learn_skills">Learn essential career and life skills</h1>
+                <p data-translate data-key="learn_text">helps you build in-demand skills fast and advance your career in a changing job market.</p>
+            </div>
+            <div class="courses">
+                <div class="cousre1 card">
+                    <img src="./images/AI fundamental.png" alt="">
+                    <div class="card-name">
+                        <span data-translate class="name">AI Fundamentals</span>
+                        <span class="arrow">&#8594;</span>
+                    </div>
+                </div>
+                <div class="course2 card">
+                    <img src="c:\Users\Ali\OneDrive - Viken fylkeskommune\Bilder\data.png" alt="">
+                    <div class="card-name">
+                        <span data-translate class="name">Data Science</span>
+                        <span class="arrow">&#8594;</span>
+                    </div>
+                </div>
+                <div class="course3 card">
+                    <div class="card-img"><img src="c:\Users\Ali\OneDrive - Viken fylkeskommune\Bilder\developement.jpg" alt=""></div>
+                    <div class="card-name">
+                        <span data-translate class="name">Development</span>
+                        <span class="arrow">&#8594;</span>
+                    </div>
+                </div>
+                <!-- <div class="course4 card">
+                    <div class="card-img"><img src="" alt=""></div>
+                    <div class="card-name">
+                        <span data-translate class="name">businesses</span>
+                        <span class="arrow"></span>
+                    </div>
+                </div>
+                <div class="course5 card">
+                    <div class="card-img"><img src="" alt=""></div>
+                    <div class="card-name">
+                        <span data-translate class="name">Cloud Computing</span>
+                        <span class="arrow"></span>
+                    </div>
+                </div>
+                <div class="course6 card">
+                    <div class="card-img"><img src="" alt=""></div>
+                    <div class="card-name">
+                        <span class="name">IT Certification</span>
+                        <span class="arrow"></span>
+                    </div>
+                </div>
+                <div class="course7 card">
+                    <div class="card-img"><img src="" alt=""></div>
+                    <div class="card-name">
+                        <span class="name">Digital Marketing</span>
+                        <span class="arrow"></span>
+                    </div>
+                </div>
+                <div class="course8 card">
+                    <div class="card-img"><img src="" alt=""></div>
+                    <div class="card-name">
+                        <span class="name">Mobile App Development</span>
+                        <span class="arrow"></span>
+                    </div>
+                </div> -->
+            </div>
+            <div class="slider-icons">
+                <button class="icon-btn"><i class="fa-solid fa-angle-left"></i></button>
+                <div class="slider-dots">
+                    <div class="dots"></div>
+                    <div class="dots"></div>
+                    <div class="dots"></div>
+                </div>
+                <button class="icon-btn"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </div>
+    <!-- section four -->
+        <div class="section4">
+            <h2 data-translate data-translate data-key="plan-title" class="plan-title">Choose the Right Development Plan for success</h2>
             <div class="plans">
-                <div class="Free">
-                    <h3>Free Courses</h3>
-                    <p>Free and less than 8$</p>
-                    <button><a href="">Get involved</a></button>
+                <div class="Free skills">
+                    <div class="cost">
+                        <h3 data-translate data-key="free_couses">Free Courses</h3>
+                        <p data-translate>Free and less than 8$</p>
+                        <button><a href="" data-key="get_involved">Get involved</a></button>
+                    </div>
                     <div class="details">
                         <li><label>vj
                             <input type="checkbox" name="" id="">
@@ -91,10 +177,12 @@
                         </label></li>
                     </div>
                 </div>
-                <div class="personal">
-                    <h3>Free Courses</h3>
-                    <p>Free and less than 8$</p>
-                    <button><a href="">Get involved</a></button>
+                <div class="personal skills">
+                    <div class="cost">
+                        <h3 data-translate>Free Courses</h3>
+                        <p data-translate>Free and less than 8$</p>
+                        <button><a href="">Get involved</a></button>
+                    </div>
                     <div class="details">
                         <li><label>vj
                             <input type="checkbox" name="" id="">
@@ -110,10 +198,12 @@
                         </label></li>
                     </div>
                 </div>
-                <div class="enterprise">
-                    <h3>Free Courses</h3>
-                    <p>Free and less than 8$</p>
-                    <button><a href="">Get involved</a></button>
+                <div class="enterprise skills">
+                    <div class="cost">
+                        <h3>Free Courses</h3>
+                        <p>Free and less than 8$</p>
+                        <button><a href="">Get involved</a></button>
+                    </div>
                     <div class="details">
                         <li><label>vj
                             <input type="checkbox" name="" id="">
@@ -132,12 +222,14 @@
             </div>
         </div>
     <!-- section four -->
-        <div class="section4">
-            <h1>Questions or concerns?</h1>
+        <div class="section5">
+            <h1 data-translate data-key="questions">Questions or concerns?</h1>
             <p>Please contact the Dynamix Networks team via email.</p>
-            <button class="emailbtn"><a href="mailto:">>&nbsp;&nbsp;&nbsp; EMAIL US</a></button>
+            <button class="emailbtn"><a href="mailto:" data-key="email_us">>&nbsp;&nbsp;&nbsp; EMAIL US</a></button>
         </div>
 
     </main>
+
+    <script src="./JS/lang.js"></script>
 </body>
 </html>
