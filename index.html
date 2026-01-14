@@ -17,12 +17,12 @@
             </div>
             <div class="dropdown-lang" id="dropdown-lang">
                 <ul id="language-option">
-                    <li data-lang="en" value="en">English</li>
-                    <li data-lang="fa" value="fa">فارسی</li>
-                    <li data-lang="ps" value="ps">پښتو</li>
-                    <li data-lang="hi" value="hi">Indian</li>
-                    <li data-lang="fr" value="fr">Français</li>
-                    <li data-lang="de" value="de">Deutsch</li>
+                    <li id="language-select" data-lang="en" value="en">English</li>
+                    <li id="language-select" data-lang="fa" value="fa">فارسی</li>
+                    <li id="language-select" data-lang="ps" value="ps">پښتو</li>
+                    <li id="language-select" data-lang="hi" value="hi">Indian</li>
+                    <li id="language-select" data-lang="fr" value="fr">Français</li>
+                    <li id="language-select" data-lang="de" value="de">Deutsch</li>
                 </ul>
             </div>
             <div class="login">
@@ -69,7 +69,7 @@
     <!-- section two -->
         <div class="section2">
             <h4 data-translate data-key="about_us">About Us</h4>
-            <p data-translate data-key="mission">
+            <p>
                 At Dynamix Networks, we specialize in building bold, human-centered solutions for real-world challenges.
                 Whether it’s crafting standout brand identities, designing independent intern projects, or reimagining
                 how tech talent is discovered and empowered, we believe in originality over convention and clarity over complexity.
@@ -143,93 +143,165 @@
                 </div> -->
             </div>
             <div class="slider-icons">
-                <button class="icon-btn"><i class="fa-solid fa-angle-left"></i></button>
+                <button class="icon-btn" id="prev"><i class="fa-solid fa-angle-left"></i></button>
                 <div class="slider-dots">
                     <div class="dots"></div>
                     <div class="dots"></div>
                     <div class="dots"></div>
                 </div>
-                <button class="icon-btn"><i class="fa-solid fa-angle-right"></i></button>
+                <button class="icon-btn" id="next"><i class="fa-solid fa-angle-right"></i></button>
             </div>
         </div>
     <!-- section four -->
         <div class="section4">
             <h2 data-translate data-translate data-key="plan-title" class="plan-title">Choose the Right Development Plan for success</h2>
             <div class="plans">
-                <div class="Free skills">
+                <div class="Fundamentals skills">
                     <div class="cost">
-                        <h3 data-translate data-key="free_couses">Free Courses</h3>
+                        <h3 data-translate data-key="free_couses">Fundamentals </h3>
                         <p data-translate>Free and less than 8$</p>
                         <button><a href="" data-key="get_involved">Get involved</a></button>
                     </div>
                     <div class="details">
-                        <li><label>vj
-                            <input type="checkbox" name="" id="">
+                        <li><label>
+                            <input type="checkbox" name="" id="">Accsess to free Basic Courses
                         </label></li>
-                        <li><label>vj
-                            <input type="checkbox" name="" id="">
+                        <li><label>
+                            <input type="checkbox" name="" id="">Certification of completion(for basic courses)
                         </label></li>
-                        <li><label>vj
-                            <input type="checkbox" name="" id="">
+                        <li><label>
+                            <input type="checkbox" name="" id="">Structured beginner learning paths
                         </label></li>
-                        <li><label>vj
-                            <input type="checkbox" name="" id="">
+                        <li><label>
+                            <input type="checkbox" name="" id="">Pre-recorded video lectures
                         </label></li>
-                    </div>
-                </div>
-                <div class="personal skills">
-                    <div class="cost">
-                        <h3 data-translate>Free Courses</h3>
-                        <p data-translate>Free and less than 8$</p>
-                        <button><a href="">Get involved</a></button>
-                    </div>
-                    <div class="details">
-                        <li><label>vj
-                            <input type="checkbox" name="" id="">
+                        <li><label>
+                            <input type="checkbox" name="" id="">multiligual content
                         </label></li>
-                        <li><label>vj
-                            <input type="checkbox" name="" id="">
+                        <li><label>
+                            <input type="checkbox" name="" id="">course progress tracking
                         </label></li>
-                        <li><label>vj
-                            <input type="checkbox" name="" id="">
-                        </label></li>
-                        <li><label>vj
-                            <input type="checkbox" name="" id="">
+                        <li><label>
+                            <input type="checkbox" name="" id="">practice exercises and quizzes
                         </label></li>
                     </div>
                 </div>
-                <div class="enterprise skills">
+                <div class="Post-Fundamentals skills">
                     <div class="cost">
-                        <h3>Free Courses</h3>
-                        <p>Free and less than 8$</p>
+                        <h3 data-translate>Post Fundamentals</h3>
+                        <p data-translate>Started from 8$</p>
                         <button><a href="">Get involved</a></button>
                     </div>
                     <div class="details">
-                        <li><label>vj
-                            <input type="checkbox" name="" id="">
+                        <li><label>
+                            <input type="checkbox" name="" id="">Access to intermediate and advanced courses
                         </label></li>
-                        <li><label>vj
-                            <input type="checkbox" name="" id="">
+                        <li><label>
+                            <input type="checkbox" name="" id="">verified certificates
                         </label></li>
-                        <li><label>vj
-                            <input type="checkbox" name="" id="">
+                        <li><label>
+                            <input type="checkbox" name="" id="">Hands-on projects and assignments
                         </label></li>
-                        <li><label>vj
-                            <input type="checkbox" name="" id="">
+                        <li><label>
+                            <input type="checkbox" name="" id="">Mentorship and instructor support
+                        </label></li>
+                        <li><label>
+                            <input type="checkbox" name="" id="">Access to exclusive content
+                        </label></li>
+                        <li><label>
+                            <input type="checkbox" name="" id="">Resume and Portfolio building projects
+                        </label></li>
+                    </div>
+                </div>
+                <div class="Mastery skills">
+                    <div class="cost">
+                        <h3>Career Plus</h3>
+                        <p>Started from 85$</p>
+                        <button><a href="">Get involved</a></button>
+                    </div>
+                    <div class="details">
+                        <li><label>
+                            <input type="checkbox" name="" id="">Access all courses including exclusive content
+                        </label></li>
+                        <li><label>
+                            <input type="checkbox" name="" id="">Career-ready Certification
+                        </label></li>
+                        <li><label>
+                            <input type="checkbox" name="" id="">One-on-one mentorship session
+                        </label></li>
+                        <li><label>
+                            <input type="checkbox" name="" id="">Internship and job placement support
+                        </label></li>
+                         <li><label>
+                            <input type="checkbox" name="" id="">advanced analytics and progress tracking
+                        </label></li>
+                         <li><label>
+                            <input type="checkbox" name="" id="">Personalized learning paths and recommendations
                         </label></li>
                     </div>
                 </div>
             </div>
         </div>
-    <!-- section four -->
+    <!-- section five -->
         <div class="section5">
             <h1 data-translate data-key="questions">Questions or concerns?</h1>
-            <p>Please contact the Dynamix Networks team via email.</p>
-            <button class="emailbtn"><a href="mailto:" data-key="email_us">>&nbsp;&nbsp;&nbsp; EMAIL US</a></button>
+            <p data-translate data-key="">Please contact the Dynamix Networks team via email.</p>
+            <button class="emailbtn"><a href="mailto:" data-translate data-key="email-us">EMAIL US</a></button>
         </div>
+    <!-- section six -->
+     <div class="courses-subjects">
+        <div class="course-names">
+            <button>AI Fundamentals</button>
+            <button></button>
+        </div>
+        <div class="all-subjects">
+            <!-- AI Fundamentals -->
+            <div class="subjects first">
+                <div class="sub1">
+                    <img src="" alt="">
+                    <h5></h5>
+                    <button><a href="http://">enroll</a></button>
+                </div>
+                <div class="sub2">Intro to AI Agents and Agentic AI</div>
+                <div class="sub3">Into to AI Chatbot</div>
+                <div class="sub4">AI for Cyber-Security: Threat Detection</div>
+                <div class="sub5">AI Masterclass for Non-Thechnical professionals</div>
+                <div class="sub6">Computer System Validation+ AI Basic(Pharma & Biothech)</div>
+                <div class="sub7">AI Security</div>
+            </div>
+            <!-- Data Science -->
+            <div class="subjects first">
+                <div class="sub1">
+                    <img src="" alt="">
+                    <h5></h5>
+                    <button><a href="http://">enroll</a></button>
+                </div>
+                <div class="sub2">Intro to AI Agents and Agentic AI</div>
+                <div class="sub3">Into to AI Chatbot</div>
+                <div class="sub4">AI for Cyber-Security: Threat Detection</div>
+                <div class="sub5">AI Masterclass for Non-Thechnical professionals</div>
+                <div class="sub6">Computer System Validation+ AI Basic(Pharma & Biothech)</div>
+                <div class="sub7">AI Security</div>
+            </div>
+            <!-- Developement -->
+             <div class="subjects first">
+                <div class="sub1">
+                    <img src="" alt="">
+                    <h5></h5>
+                    <button><a href="http://">enroll</a></button>
+                </div>
+                <div class="sub2">Intro to AI Agents and Agentic AI</div>
+                <div class="sub3">Into to AI Chatbot</div>
+                <div class="sub4">AI for Cyber-Security: Threat Detection</div>
+                <div class="sub5">AI Masterclass for Non-Thechnical professionals</div>
+                <div class="sub6">Computer System Validation+ AI Basic(Pharma & Biothech)</div>
+                <div class="sub7">AI Security</div>
+            </div>
+        </div>
+     </div>
 
     </main>
 
-    <script src="./JS/lang.js"></script>
+    <script src="./JS/homepage.js"></script>
 </body>
 </html>

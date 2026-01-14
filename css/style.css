@@ -27,7 +27,7 @@ header{
     box-shadow: var(--box-shadow)
 }
 
-/* sub header part */
+/* top header part */
 .sub-header{
     width: 100%;
     height: 40px;
@@ -51,6 +51,7 @@ header{
     }
 }
 
+/* language dropdown  */
 .sub-header .dropdown-lang{
     position: absolute;
     display: none;
@@ -70,6 +71,7 @@ header{
     cursor: pointer;
 }
 
+/* login user and admin part */
 .login{
     position: absolute;
     right: 9rem;
@@ -158,7 +160,7 @@ header{
 
 }
 
-/* searchbar dropdown */
+/* searchbar dropdown layout */
 /* .seachbar{
    width: 100%;
    height: 40px;
@@ -252,7 +254,7 @@ header{
     }
 }
 
-/* main part section two */
+/* main part section two  about part */
 .main-container .section2{
     width: 70%;
     padding: 0 3rem;
@@ -330,6 +332,7 @@ header{
     margin-right: 1rem;
 }
 
+/* slider icon parts for wrapping the courses */
 .section3 .slider-icons{
     /* width: 300px; */
     position: absolute;
@@ -381,8 +384,8 @@ header{
     gap: 1.2rem;
 }
 
-.section4 .plans .Free{background-color: rgba(0, 0, 255, 0.338);}
-.section4 .plans .personal{background-color: rgba(33, 6, 57, 0.687);}
+.section4 .plans .Fundamentals{background-color: rgba(0, 0, 255, 0.338);}
+.section4 .plans .Post-Fundamentals{background-color: rgba(33, 6, 57, 0.687);}
 .section4 .plans .enterprise{background-color: rgba(0, 0, 0, 0.986);}
 
 .section4 .plans .skills{
@@ -409,7 +412,7 @@ header{
 /* main part section five */
 .main-container .section5{
     width: 100%;
-    height: 280px;
+    height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
