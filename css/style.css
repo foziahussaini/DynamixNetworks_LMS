@@ -510,6 +510,9 @@ header{
     display: flex;
     gap: 1.5rem;
     cursor: pointer;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    align-items: flex-start;
 }
 
 .section6 .all-subjects .subjects .sub{
@@ -523,6 +526,10 @@ header{
     align-items: start;
     padding: 0.8rem;
     gap: 1rem;
+}
+
+.section6 .all-subjects .subjects .sub{
+    flex: 0 0 280px;
 }
 
 .section6 .all-subjects .subjects .sub img{
@@ -561,13 +568,13 @@ header{
 }
 
 /* previous and next buttons for subjects */
-.section6 .all-subjects .btn{
-    position: relative;
+.section6 .btn{
+    position: absolute;
     display: flex;
     justify-content: space-between;
     width: 30px;
     height: 30px;
-    margin-top: 8rem;
+    margin-top: 17rem;
     gap: 1rem;
 
     >.prev-subjects, .next-subjects{
@@ -579,9 +586,39 @@ header{
     }
 }
 
-.section6 .all-subjects .btn .prev-subjects{
+.section6 .btn .prev-subjects{
     position: absolute;
-    right: 76.5rem;
+    left: -1rem;
     z-index: 10;
     
+}
+
+.section6 .btn .next-subjects{
+    position: absolute;
+    left: 75rem;
+    z-index: 10;
+    
+}
+
+/* Subjects slider animations */
+.section6 .all-subjects .subjects{
+    transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+.section6 .all-subjects .subjects.slide-in-right{
+    animation: slideInFromRight 0.45s forwards;
+}
+
+.section6 .all-subjects .subjects.slide-in-left{
+    animation: slideInFromLeft 0.45s forwards;
+}
+
+@keyframes slideInFromRight{
+    from{ transform: translateX(100%); opacity: 0; }
+    to{ transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromLeft{
+    from{ transform: translateX(-100%); opacity: 0; }
+    to{ transform: translateX(0); opacity: 1; }
 }

@@ -173,6 +173,7 @@ language.forEach((option) => {
 }
 );
 
+
 // slider part for courses section3
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
@@ -187,3 +188,92 @@ next.addEventListener("click", () => {
     dot.classList.toggle("active");
   });
 });
+
+// previous and next buttons for subjects section6
+const prevSubjects = document.querySelector(".prev-subjects");  
+const nextSubjects = document.querySelector(".next-subjects");
+const subjects = Array.from(document.querySelectorAll(".subjects"));
+
+// default to Development subject (class 'third') if available
+let defaultIndex = subjects.findIndex(s => s.classList.contains('third') || s.className.toLowerCase().includes('third'));
+let currentSubject = defaultIndex >= 0 ? defaultIndex : 0;
+let currentPage = 0; // page index within the current subject group (0 = first 4 items)
+
+function showSubject(newIndex, direction = "right") {
+  if (newIndex === currentSubject) return;
+
+  const prev = subjects[currentSubject];
+  const next = subjects[newIndex];
+
+  // hide previous immediately
+  if (prev) {
+    prev.style.display = "none";
+    prev.classList.remove("slide-in-left", "slide-in-right", "active");
+  }
+
+  // prepare next and animate in
+  if (next) {
+    next.style.display = "flex";
+    next.classList.remove("slide-in-left", "slide-in-right");
+    // force reflow to restart animation when clicking quickly
+    void next.offsetWidth;
+    next.classList.add(direction === "left" ? "slide-in-left" : "slide-in-right", "active");
+    // reset to first page for the newly shown group
+    currentPage = 0;
+    renderPage(next, currentPage);
+  }
+
+  currentSubject = newIndex;
+}
+
+
+// initialize: hide all except the default subject
+if (subjects.length) {
+  subjects.forEach((s, i) => {
+    if (i === currentSubject) {
+      s.style.display = "flex";
+      s.classList.add("active");
+      renderPage(s, currentPage);
+    } else {
+      s.style.display = "none";
+    }
+  });
+
+  // wire up field buttons to filter subjects by index (buttons order matches subject groups)
+  const fields = Array.from(document.querySelectorAll('.field'));
+  fields.forEach((btn, idx) => {
+    btn.addEventListener('click', () => {
+      if (idx >= subjects.length) return; // no matching subjects group
+      const direction = idx < currentSubject ? 'left' : 'right';
+      showSubject(idx, direction);
+      // toggle active class on buttons
+      fields.forEach(f => f.classList.remove('active-field'));
+      btn.classList.add('active-field');
+    });
+  });
+
+  // prev/next should page within the currently visible subject group (4 items per page)
+  nextSubjects && nextSubjects.addEventListener("click", () => {
+    const subs = Array.from(subjects[currentSubject].querySelectorAll('.sub'));
+    const pages = Math.max(1, Math.ceil(subs.length / 4));
+    currentPage = (currentPage + 1) % pages;
+    renderPage(subjects[currentSubject], currentPage);
+  });
+
+  prevSubjects && prevSubjects.addEventListener("click", () => {
+    const subs = Array.from(subjects[currentSubject].querySelectorAll('.sub'));
+    const pages = Math.max(1, Math.ceil(subs.length / 4));
+    currentPage = (currentPage - 1 + pages) % pages;
+    renderPage(subjects[currentSubject], currentPage);
+  });
+}
+
+// render a page of .sub items (4 per page) inside a .subjects group
+function renderPage(subjectEl, pageIndex) {
+  if (!subjectEl) return;
+  const subs = Array.from(subjectEl.querySelectorAll('.sub'));
+  const perPage = 4;
+  subs.forEach((sub, i) => {
+    sub.style.display = (i >= pageIndex * perPage && i < (pageIndex + 1) * perPage) ? 'flex' : 'none';
+  });
+}
