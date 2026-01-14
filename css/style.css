@@ -9,6 +9,9 @@
     --bg-color: rgba(108, 144, 144, 0.753);
     --font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    --bg2-color: rgba(216, 219, 218, 0.74);
+    --btn-color: rgba(142, 116, 236, 0.701);
+    --border-radius: 0.3rem;
 }
 
 body{
@@ -129,7 +132,7 @@ header{
         }
     }
 }
-
+/* why dynamix button */
 .dynamix-btn{
     width: 250px;
     padding: 0.8rem;
@@ -137,12 +140,14 @@ header{
     margin-right: 9rem;
     display: flex;
     border: none;
-    border-radius: 5rem;
+    border-radius: var(--border-radius);
+    background-color: var(--btn-color);
 
     >a{
         text-decoration: none;
         font-size: 12px;
-        font-weight: 600;
+        font-weight: 700;
+        color: black;
     }
 }
 
@@ -237,8 +242,9 @@ header{
     margin-left: -3rem;
     font-weight: 700;
     font-size: large;
-    border-radius: 18px;
+    border-radius: var(--border-radius);
     cursor: pointer;
+    background-color: var(--btn-color);
 }
 
 .section1 .image{
@@ -343,6 +349,7 @@ header{
     gap: 0.6rem;
 }
 
+/* previous and next buttons for courses */
 .section3 .icon-btn{
     border-radius: 1.6rem;
     padding: 0.4rem;
@@ -386,7 +393,7 @@ header{
 
 .section4 .plans .Fundamentals{background-color: rgba(0, 0, 255, 0.338);}
 .section4 .plans .Post-Fundamentals{background-color: rgba(33, 6, 57, 0.687);}
-.section4 .plans .enterprise{background-color: rgba(0, 0, 0, 0.986);}
+.section4 .plans .Mastery{background-color: rgba(0, 0, 0, 0.986);}
 
 .section4 .plans .skills{
     width: 30%;
@@ -405,7 +412,18 @@ header{
 
 .section4 .plans .skills .details{
     height: 300px;
-    background-color: aliceblue;
+    background-color: var(--bg2-color);
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    gap: 0.6rem;
+
+    >li{
+        font-size: small;
+        padding-left: 1.2rem;
+        display: flex;
+        gap: 1rem;
+    }
 }
 
 
@@ -436,7 +454,134 @@ header{
     text-decoration: none;
     font-weight: bold;
     margin-top: 1rem;
-     >a{
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--btn-color);
+
+    >a{
         text-decoration: none;
+        color: black;
      }
+}
+
+/* Section six course fields */
+.section6{
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.section6 .course-names{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 2rem;
+    border-bottom: 1.8px solid gray;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section6 .course-names .field{
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 0.5rem 0.6rem;
+    background: transparent;
+    border: none;
+}
+
+.section6 .course-names .field:hover{
+    border-bottom: 2px solid gray;
+}
+
+.section6 .all-subjects{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.section6 .all-subjects .subjects{
+    display: flex;
+    gap: 1.5rem;
+    cursor: pointer;
+}
+
+.section6 .all-subjects .subjects .sub{
+    width: 280px;
+    height: 300px;
+    border-radius: 1rem;
+    background-color: var(--bg2-color);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: start;
+    padding: 0.8rem;
+    gap: 1rem;
+}
+
+.section6 .all-subjects .subjects .sub img{
+    width: 260px;
+    height: 160px;
+    border-radius: 0.8rem;
+}
+
+.section6 .all-subjects .subjects .sub .enroll-btn{
+    display: flex;
+    gap: 6.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+
+    >p{
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: rgba(23, 23, 23, 0.74);
+    }
+
+    >button{
+        padding: 0.5rem 1rem;
+        align-items: center;
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        background-color: var(--btn-color);
+
+        >a{
+            text-decoration: none;
+            color: black;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+/* previous and next buttons for subjects */
+.section6 .all-subjects .btn{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 30px;
+    height: 30px;
+    margin-top: 8rem;
+    gap: 1rem;
+
+    >.prev-subjects, .next-subjects{
+        border-radius: 1.6rem;
+        padding: 0.4rem;
+        border: none;
+        background-color: var(--bg2-color);
+        box-shadow: var(--box-shadow)
+    }
+}
+
+.section6 .all-subjects .btn .prev-subjects{
+    position: absolute;
+    right: 76.5rem;
+    z-index: 10;
+    
 }
