@@ -277,3 +277,17 @@ function renderPage(subjectEl, pageIndex) {
     sub.style.display = (i >= pageIndex * perPage && i < (pageIndex + 1) * perPage) ? 'flex' : 'none';
   });
 }
+
+// navigate to register from by enrolling the courses
+document.addEventListener('DOMContentLoaded', () => {
+  const isLoggedIn = false; 
+  document.querySelectorAll('.enroll-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      if (isLoggedIn) {
+        alert('You are enrolled in ' + this.dataset.subject + '!');
+      } else {
+        window.location.href = "./register.html";
+      }
+    });
+  });
+});
