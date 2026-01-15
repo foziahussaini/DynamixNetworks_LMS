@@ -7,27 +7,60 @@
     <link  rel="stylesheet" href="./css/register.css">
 </head>
 <body>
-    <header>
-        <div class="logo"></div>
-        <div class="lang"></div>
-    </header>
-    <div class="container">
-        <label>Name
-            <input type="text" name="" id="">
-        </label>
-        <label>Last Name
-            <input type="text" name="" id="">
-        </label>
-        <label>Email
-            <input type="email" name="" id="">
-        </label>
-        <label for="">Password
-            <input type="password" name="" id="">
-        </label>
-        <label for="">Confirm Password
-            <input type="password" name="" id="">
-        </label>
-        <button type="submit">Sign Up</button>
+    <div class="login-container">
+        <div class="header">
+            <div class="logo" id="logo">
+                <img src="./images/logo.lms.jpg" alt="">
+            </div>
+            <div class="lang">
+                <div class="language">
+                <span id="language-icon" onclick="toggleDropdown"><i class="fa-duotone fa-solid fa-earth-americas fa-s" style="--fa-primary-opacity: 0.4; --fa-secondary-opacity: 1; margin-top: 0.2rem;"></i></span>
+                <span data-translate class="lang" id="lang-text">EN</span> 
+            </div>
+            <!-- <div class="dropdown-lang" id="dropdown-lang">
+                <ul id="language-option">
+                    <li id="language-select" data-lang="en" value="en">English</li>
+                    <li id="language-select" data-lang="fa" value="fa">فارسی</li>
+                    <li id="language-select" data-lang="ps" value="ps">پښتو</li>
+                    <li id="language-select" data-lang="hi" value="hi">Indian</li>
+                    <li id="language-select" data-lang="fr" value="fr">Français</li>
+                    <li id="language-select" data-lang="de" value="de">Deutsch</li>
+                </ul>
+            </div> -->
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="name" style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <label>Name</label>
+                <input type="text" name="" id="name">
+            </div>
+            <div class="last-name" style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <label>Last Name</label>
+                <input type="text" name="" id="last-name"/>
+            </div>
+            <div class="profession" style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <label>profession</label>
+                 <input type="text" name="" id="profession"/>
+            </div>
+            <div class="country" style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <label>Country</label>
+                <input type="text" name="" id="adress"/>
+            </div>
+            <div class="email" style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <label class="email">Email</label>
+                <input type="email" name="" id="email"/>
+            </div>
+            <div class="pass" style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <label for="">Password</label>
+                <input type="password" name="" id="" required>
+            </div>
+            <div class="pass-c" style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <label for="">Confirm Password</label>
+                <input type="password" name="" id="" required>
+            </div>
+            <button type="submit">Sign Up</button>
+        </div>
     </div>
+    <script src="./JS/homepage.js">    </script>
 </body>
 </html>

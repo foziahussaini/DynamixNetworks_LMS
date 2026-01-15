@@ -197,7 +197,7 @@ const subjects = Array.from(document.querySelectorAll(".subjects"));
 // default to Development subject (class 'third') if available
 let defaultIndex = subjects.findIndex(s => s.classList.contains('third') || s.className.toLowerCase().includes('third'));
 let currentSubject = defaultIndex >= 0 ? defaultIndex : 0;
-let currentPage = 0; // page index within the current subject group (0 = first 4 items)
+let currentPage = 0;
 
 function showSubject(newIndex, direction = "right") {
   if (newIndex === currentSubject) return;
@@ -215,7 +215,7 @@ function showSubject(newIndex, direction = "right") {
   if (next) {
     next.style.display = "flex";
     next.classList.remove("slide-in-left", "slide-in-right");
-    // force reflow to restart animation when clicking quickly
+   
     void next.offsetWidth;
     next.classList.add(direction === "left" ? "slide-in-left" : "slide-in-right", "active");
     // reset to first page for the newly shown group
@@ -291,3 +291,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+
