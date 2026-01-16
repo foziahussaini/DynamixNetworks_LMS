@@ -13,6 +13,7 @@
     --bg2-color: rgba(216, 219, 218, 0.74);
     --btn-color: rgba(142, 116, 236, 0.701);
     --border-radius: 0.3rem;
+    --color-hover: rgba(151, 189, 184, 0.877);
 }
 
 body{
@@ -25,8 +26,8 @@ body{
 }
 
 .login-container{
-    width:70%;
-    height: 500px;
+    width:60%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -40,7 +41,7 @@ body{
 
 .header{
     width: 100%;
-    height: 15vh;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,15 +63,83 @@ body{
     }
 }
 
+.header .lang{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+/* dropdown language menu */
+.header .dropdown-lang{
+    position: absolute;
+    top: 3.5rem;
+    right: 2rem;
+    width: 150px;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    display: none;
+    z-index: 100;
+}   
+.header .dropdown-lang ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.header .dropdown-lang ul li{
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.header .dropdown-lang ul li:hover{
+    background-color: var(--bg2-color);
+}
+
+/* form container */
 .login-container .form-container{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 3rem;
+    padding: 1rem;
     gap: 1.5rem;
+}
+
+.login-container .form-container label{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.login-container .form-container input{
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid gray;
+    border-radius: var(--border-radius);
+    outline: none;
 }
 
 .login-container .form-container .email{
     grid-column: 1/-1;
 }
 
+.login-container .form-container .btn{
+    width: fit-content;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--bg-color);
+    font-weight: 700;
+    display: flex;
+}
+
+.login-container .form-container .btn:hover{
+   transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}

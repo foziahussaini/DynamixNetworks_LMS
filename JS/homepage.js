@@ -174,7 +174,86 @@ language.forEach((option) => {
 );
 // end of language part
 
+// *************************************************************************************
 
+// All button hover method 
+// dynamix-btn at header
+const dynamixBtn = document.querySelector("button");
+
+function CssVaraible(variableName) {
+    const rootStyles = getComputedStyle(document.documentElement);
+    return rootStyles.getPropertyValue(variableName).trim();
+}
+
+//  CSS variables
+const hoverColor = CssVaraible('--color-hover');
+const defaultColor = CssVaraible('--bg-color');
+dynamixBtn.style.transition = "background-color 0.3s ease-in-out";
+
+dynamixBtn.addEventListener("mouseover", () => {
+  dynamixBtn.style.backgroundColor = hoverColor; 
+});
+
+dynamixBtn.addEventListener("mouseleave", () => {
+    dynamixBtn.style.backgroundColor = defaultColor;
+});
+
+// services btn at first section
+const ServicesBtn = document.getElementById("services-btn");
+
+function CssVaraible(variableName) {
+    const rootStyles = getComputedStyle(document.documentElement);
+    return rootStyles.getPropertyValue(variableName).trim();
+}
+
+//  CSS variables
+const hoveredColor = CssVaraible('--color-hover');
+const defaultsColor = CssVaraible('--bg-color');
+ServicesBtn.style.transition = "background-color 0.3s ease-in-out";
+
+ServicesBtn.addEventListener("mouseover", () => {
+  ServicesBtn.style.backgroundColor = hoveredColor; 
+});
+
+ServicesBtn.addEventListener("mouseleave", () => {
+    ServicesBtn.style.backgroundColor = defaultsColor;
+});
+
+// card-name hover in section 3
+const cardbtn = document.querySelectorAll(".card-name");
+const defaultColors = CssVaraible('--bg2-color');
+
+cardbtn.forEach(card => {
+  card.addEventListener("mouseover", () =>{
+    card.style.transition = "background-color 0.5s ease-in-out";
+    card.style.backgroundColor = hoverColor;
+  });
+});
+
+cardbtn.forEach(card => {
+  card.addEventListener("mouseleave", () => {
+    card.style.backgroundColor = defaultColors;
+  });
+});
+
+// get involved btn hover section 4
+const involvedBtns = document.querySelectorAll(".involved-btn"); 
+const defaultsColors = CssVaraible('--bg2-color');
+
+involvedBtns.forEach(involvedBtn => {
+  involvedBtn.addEventListener("mouseover", () =>{
+    involvedBtn.style.transition = "background-color 0.5s ease-in-out";
+    involvedBtn.style.backgroundColor = hoverColor;
+})
+
+involvedBtn.addEventListener("mouseleave", () => {
+    involvedBtn.style.backgroundColor = defaultsColors;
+});
+
+});
+
+
+// **************************************************************
 // slider part for courses section3
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
@@ -273,6 +352,11 @@ if (subjects.length) {
       // toggle active class on buttons
       fields.forEach(f => f.classList.remove('active-field'));
       btn.classList.add('active-field');
+      if( btn === active){
+        btn.style.borderBottom = "2px solid gray";
+      }else{
+        btn.style.borderBottom = "none";
+      }
     });
   });
 

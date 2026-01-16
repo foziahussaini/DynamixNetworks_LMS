@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=., initial-scale=1.0">
     <title>Document</title>
     <link  rel="stylesheet" href="./css/register.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="login-container">
@@ -13,54 +14,73 @@
                 <img src="./images/logo.lms.jpg" alt="">
             </div>
             <div class="lang">
-                <div class="language">
-                <span id="language-icon" onclick="toggleDropdown"><i class="fa-duotone fa-solid fa-earth-americas fa-s" style="--fa-primary-opacity: 0.4; --fa-secondary-opacity: 1; margin-top: 0.2rem;"></i></span>
+                <span id="language-icon"><i class="fa-duotone fa-solid fa-earth-americas fa-s" style="--fa-primary-opacity: 0.4; --fa-secondary-opacity: 1; margin-top: 0.2rem;"></i></span>
                 <span data-translate class="lang" id="lang-text">EN</span> 
             </div>
-            <!-- <div class="dropdown-lang" id="dropdown-lang">
+            <div class="dropdown-lang" id="dropdown-lang">
                 <ul id="language-option">
-                    <li id="language-select" data-lang="en" value="en">English</li>
-                    <li id="language-select" data-lang="fa" value="fa">فارسی</li>
-                    <li id="language-select" data-lang="ps" value="ps">پښتو</li>
-                    <li id="language-select" data-lang="hi" value="hi">Indian</li>
-                    <li id="language-select" data-lang="fr" value="fr">Français</li>
-                    <li id="language-select" data-lang="de" value="de">Deutsch</li>
+                    <li  data-lang="en" value="en">English</li>
+                    <li  data-lang="fa" value="fa">فارسی</li>
+                    <li  data-lang="ps" value="ps">پښتو</li>
+                    <li  data-lang="hi" value="hi">Indian</li>
+                    <li  data-lang="fr" value="fr">Français</li>
+                    <li  data-lang="de" value="de">Deutsch</li>
                 </ul>
-            </div> -->
             </div>
         </div>
         <div class="form-container">
             <div class="name" style="display: flex; flex-direction: column; gap: 0.6rem;">
-                <label>Name</label>
-                <input type="text" name="" id="name">
+                <div class="lebal">
+                    <label for="name" data-translate data-key="name">Name</label>
+                    <span style="color: red; margin-left: 0.3rem;">*</span>
+                </div>
+                <input type="text" name="name" id="name" required>
             </div>
             <div class="last-name" style="display: flex; flex-direction: column; gap: 0.6rem;">
-                <label>Last Name</label>
-                <input type="text" name="" id="last-name"/>
+                <div class="lebal">
+                    <label for="last-name" data-translate data-key="last-name">Last Name</label>
+                    <span style="color: red; margin-left: 0.3rem;">*</span>
+                </div>
+                <input type="text" name="last-name" id="last-name" required>
             </div>
             <div class="profession" style="display: flex; flex-direction: column; gap: 0.6rem;">
-                <label>profession</label>
-                 <input type="text" name="" id="profession"/>
+                <div class="label">
+                    <label for="profession" data-translate data-key="profession">profession</label>
+                    <span style="color: red; margin-left: 0.3rem;">*</span>
+                </div>
+                <input type="text" name="profession" id="profession"/>
             </div>
             <div class="country" style="display: flex; flex-direction: column; gap: 0.6rem;">
-                <label>Country</label>
-                <input type="text" name="" id="adress"/>
+                <div class="label">
+                    <label for="country" data-translate data-key="country">Country</label>
+                    <span style="color: red; margin-left: 0.3rem;">*</span>
+                </div>
+                <input type="text" name="country" id="country"/>
             </div>
             <div class="email" style="display: flex; flex-direction: column; gap: 0.6rem;">
-                <label class="email">Email</label>
-                <input type="email" name="" id="email"/>
+                <div class="lebel">
+                    <label for="email" data-translate data-key="email">Email</label>
+                    <span style="color: red; margin-left: 0.3rem;">*</span>
+                </div>
+                <input type="email" name="email" id="email"/>
             </div>
             <div class="pass" style="display: flex; flex-direction: column; gap: 0.6rem;">
-                <label for="">Password</label>
-                <input type="password" name="" id="" required>
+                <div class="lebal">
+                    <label for="password" data-translate data-key="password">Password</label>
+                    <span style="color: red; margin-left: 0.3rem;">*</span>
+                </div>
+                <input type="password" name="password" id="password" required>
             </div>
             <div class="pass-c" style="display: flex; flex-direction: column; gap: 0.6rem;">
-                <label for="">Confirm Password</label>
-                <input type="password" name="" id="" required>
+                <div class="label">
+                    <label for="confirm-password" data-translate data-key="confirm-password">Confirm Password</label>
+                    <span style="color: red; margin-left: 0.3rem;">*</span>
+                </div>
+                <input type="password" name="confirm-password" id="confirm-password" required>
             </div>
-            <button type="submit">Sign Up</button>
+            <button class="btn" id="btn" type="submit" data-translate data-key="sign-up">Sign Up</button>
         </div>
     </div>
-    <script src="./JS/homepage.js">    </script>
+    <script src="./JS/register.js"></script>
 </body>
 </html>

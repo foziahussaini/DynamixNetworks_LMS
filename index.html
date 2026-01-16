@@ -14,7 +14,7 @@
         <!-- subheader -->
          <div class="sub-header">
             <div class="language">
-                <span id="language-icon" onclick="toggleDropdown"><i class="fa-duotone fa-solid fa-earth-americas fa-s" style="--fa-primary-opacity: 0.4; --fa-secondary-opacity: 1; margin-top: 0.2rem;"></i></span>
+                <span id="language-icon"><i class="fa-duotone fa-solid fa-earth-americas fa-s" style="--fa-primary-opacity: 0.4; --fa-secondary-opacity: 1; margin-top: 0.2rem;"></i></span>
                 <span data-translate class="lang" id="lang-text">EN</span> 
             </div>
             <div class="dropdown-lang" id="dropdown-lang">
@@ -62,7 +62,7 @@
                 <h1 data-translate data-key="title" >Dynamix Networks</h1>
                 <h3 data-translate data-key="sub-title" >We are future-proofing<br> non-tech hiring with ownable <br>ideas and scable systems</h3>
                 <p data-translate data-key="sub-title2" >If you are tired of cookies-cutter roles and want to build something that <br>lasts, you are inthe right place.</p>
-                <button data-translate data-key="services">Our Services</button>
+                <button id="services-btn" data-translate data-key="services">Our Services</button>
             </div>
             <div class="image">
                 <img src="./images/lMS image1.jpg" alt="">
@@ -89,7 +89,7 @@
             <div class="courses">
                 <div class="cousre1 card">
                     <img src="./images/AI fundamental.png" alt="">
-                    <div class="card-name">
+                    <div id="card-name" class="card-name">
                         <span data-translate class="name">AI Fundamentals</span>
                         <span class="arrow">&#8594;</span>
                     </div>
@@ -139,9 +139,11 @@
             <div class="plans">
                 <div class="Fundamentals skills">
                     <div class="cost">
-                        <h3 data-translate data-key="free_couses">Fundamentals </h3>
-                        <p data-translate>Free and less than 12$</p>
-                        <button><a href="" data-key="get_involved">Get involved</a></button>
+                        <div class="cost-detail" style=" display:flex; flex-direction: column; gap: 0.8rem;">
+                            <h2 data-translate data-key="free_couses">Fundamentals </h2>
+                            <p data-translate>Free and less than 12$</p>
+                        </div>
+                        <button class="involved-btn"><a href="" data-key="get_involved">Get involved</a></button>
                     </div>
                     <div class="details">
                         <li>
@@ -169,9 +171,11 @@
                 </div>
                 <div class="Post-Fundamentals skills">
                     <div class="cost">
-                        <h3 data-translate>Post Fundamentals</h3>
-                        <p data-translate>Started from 8$</p>
-                        <button><a href="">Get involved</a></button>
+                        <div class="cost-detail" style=" display:flex; flex-direction: column; gap: 0.8rem;">
+                            <h2 data-translate>Post Fundamentals</h2>
+                            <p data-translate>Started from 8$</p>
+                        </div>
+                        <button class="involved-btn"><a href="">Get involved</a></button>
                     </div>
                     <div class="details">
                         <li>
@@ -196,9 +200,11 @@
                 </div>
                 <div class="Mastery skills">
                     <div class="cost">
-                        <h3>Career Plus</h3>
-                        <p>Started from 85$</p>
-                        <button><a href="">Get involved</a></button>
+                        <div class="cost-detail"style=" display:flex; flex-direction: column; gap: 0.8rem;">
+                            <h2>Career Plus</h2>
+                            <p>Started from 85$</p>
+                        </div>
+                        <button class="involved-btn"><a href="">Get involved</a></button>
                     </div>
                     <div class="details">
                         <li>
