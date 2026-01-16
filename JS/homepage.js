@@ -172,24 +172,48 @@ language.forEach((option) => {
   });
 }
 );
+// end of language part
 
 
 // slider part for courses section3
-const prev = document.getElementById("prev");
-const next = document.getElementById("next");
-const slides = document.querySelectorAll(".card");
-const dots = document.querySelectorAll(".dots");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+const cards = Array.from(document.querySelectorAll(".section3 .card"));
 
-next.addEventListener("click", () => {
-  slides.forEach((slide) => {
-    slide.classList.toggle("active");
+const visibleCount = 3;
+let startIndex = 0;
+
+function updateSlider() {
+  cards.forEach((card, index) => {
+    if (index >= startIndex && index < startIndex + visibleCount) {
+      card.style.display = "flex";
+    } else {
+      card.style.display = "none";
+    }
   });
-  dots.forEach((dot) => {
-    dot.classList.toggle("active");
-  });
+}
+
+// next button
+nextBtn.addEventListener("click", () => {
+  if (startIndex + visibleCount < cards.length) {
+    startIndex += visibleCount;
+  }
+  updateSlider();
 });
 
-// previous and next buttons for subjects section6
+// prev button
+prevBtn.addEventListener("click", () => {
+  if (startIndex - visibleCount >= 0) {
+    startIndex -= visibleCount;
+  }
+  updateSlider();
+});
+
+// initialize
+updateSlider();
+
+
+// previous and next buttons for subjects section6 
 const prevSubjects = document.querySelector(".prev-subjects");  
 const nextSubjects = document.querySelector(".next-subjects");
 const subjects = Array.from(document.querySelectorAll(".subjects"));
@@ -243,7 +267,7 @@ if (subjects.length) {
   const fields = Array.from(document.querySelectorAll('.field'));
   fields.forEach((btn, idx) => {
     btn.addEventListener('click', () => {
-      if (idx >= subjects.length) return; // no matching subjects group
+      if (idx >= subjects.length) return; 
       const direction = idx < currentSubject ? 'left' : 'right';
       showSubject(idx, direction);
       // toggle active class on buttons
