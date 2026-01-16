@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const langText = document.getElementById("lang-text");
   const languageOptions = document.querySelectorAll("#language-option li");
 
+  // language json part added 
   const translations = {
     "en": {
       "home": "Home",
@@ -125,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // function for language translation
   function translatePage(lang) {
     document.querySelectorAll("[data-translate]").forEach(el => {
       const key = el.dataset.key;
@@ -177,7 +179,7 @@ language.forEach((option) => {
 // *************************************************************************************
 
 // All button hover method 
-// dynamix-btn at header
+// dynamix-btn at header hover
 const dynamixBtn = document.querySelector("button");
 
 function CssVaraible(variableName) {
@@ -198,7 +200,17 @@ dynamixBtn.addEventListener("mouseleave", () => {
     dynamixBtn.style.backgroundColor = defaultColor;
 });
 
-// services btn at first section
+// header navbar ul >li hover and active
+const liMenu = document.querySelectorAll("li");
+liMenu.forEach(li =>{
+  li.addEventListener("click", () => {
+    liMenu.forEach(item => 
+    item.classList.remove("active"));
+    li.classList.add("active");
+  })
+})
+
+// services btn at first section hover
 const ServicesBtn = document.getElementById("services-btn");
 
 function CssVaraible(variableName) {
@@ -219,7 +231,7 @@ ServicesBtn.addEventListener("mouseleave", () => {
     ServicesBtn.style.backgroundColor = defaultsColor;
 });
 
-// card-name hover in section 3
+// card-name hover in section 3 
 const cardbtn = document.querySelectorAll(".card-name");
 const defaultColors = CssVaraible('--bg2-color');
 
@@ -252,6 +264,107 @@ involvedBtn.addEventListener("mouseleave", () => {
 
 });
 
+// email button hover section 5
+const emailBtn = document.getElementById("emailbtn");
+emailBtn.addEventListener("mouseover", () =>{
+  emailBtn.style.backgroundColor = hoverColor;
+})
+emailBtn.addEventListener("mouseleave", () =>{
+  emailBtn.style.backgroundColor = defaultsColors;
+})
+
+// section six hover enrollbtn and active field
+document.addEventListener('DOMContentLoaded', (event) => {
+    const courseFields = document.querySelectorAll(".field");
+
+    courseFields.forEach(field => {
+      field.addEventListener("mouseover", () =>{
+        field.style.transition = "color 0.5s ease-in-out";
+        field.style.backgroundColor = hoverColor;
+    });
+    });
+
+    courseFields.forEach(field => {
+      field.addEventListener("mouseleave", () => {
+        field.style.backgroundColor = "transparent";
+    });
+  }); 
+
+    courseFields.forEach(field => {
+      field.addEventListener("click", () => {
+        courseFields.forEach(sub => {
+          sub.classList.remove("active");
+        });
+      field.classList.add("active");
+    });
+  });
+});
+
+// hover enroll btns in section6
+const enrollBtns = document.querySelectorAll("button");
+enrollBtns.forEach(enrollBtn => {
+  enrollBtn.addEventListener("mouseover", () =>{
+    enrollBtn.style.transition = "background-color 0.5s ease-in-out";
+    enrollBtn.style.backgroundColor = hoverColor;
+})
+});
+
+enrollBtns.forEach(enrollBtn => {
+  enrollBtn.addEventListener("mouseleave", () => {
+    enrollBtn.style.backgroundColor = defaultColor;
+});
+});
+// all hover methods end
+
+// **************************************************************
+// linked and navigated options parts and pages 
+
+// login button link to login page
+const loginBtn = document.getElementById("login");
+loginBtn.addEventListener("click", () => {
+  window.location.href = "./register.html";
+});
+
+// navbar links to sections
+document.addEventListener("DOMContentLoaded", () => {
+  const menuItems = document.querySelectorAll(".navBar li");
+  const ServicesBtn = document.querySelectorAll("[data-target]");
+
+  // services button navigation section1 to section4
+  ServicesBtn.forEach(btn => {  
+    btn.addEventListener("click", () => {
+      const targetId = btn.dataset.target;
+      const section = document.getElementById(targetId);
+
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  });
+});
+
+// courses card navigation to subjects section6
+const courseCards = document.querySelectorAll(".card-name");
+courseCards.forEach(card => {
+  card.addEventListener("click", () => {
+    const subjectsSection = document.getElementById("all-fields");
+    subjectsSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+})
+
+// navigation email button to contact section5
+const emailButton = document.getElementById("emailbtn");
+emailButton.addEventListener("click", () => {
+  const contactSection = document.getElementById("email");
+  contactSection.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+});
 
 // **************************************************************
 // slider part for courses section3
@@ -376,7 +489,7 @@ if (subjects.length) {
   });
 }
 
-// render a page of .sub items (4 per page) inside a .subjects group
+// render a page of .subjects group
 function renderPage(subjectEl, pageIndex) {
   if (!subjectEl) return;
   const subs = Array.from(subjectEl.querySelectorAll('.sub'));

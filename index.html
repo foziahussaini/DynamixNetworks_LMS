@@ -27,7 +27,7 @@
                     <li id="language-select" data-lang="de" value="de">Deutsch</li>
                 </ul>
             </div>
-            <div class="login">
+            <div class="login" id="login">
                 <i class="fa-regular fa-user fa-xs" style="margin-top: 0.7rem;"></i>
                 <span data-translate data-key="login" class="user">log in</span>
             </div>
@@ -39,10 +39,10 @@
             </div>
             <div class="navBar">
                 <ul>
-                    <li data-translate data-key="home">Home</li>
-                    <li data-translate data-key="about">About</li>
-                    <li data-translate data-key="explore">Explore</li>
-                    <li data-translate data-key="contact">Contact</li>
+                    <li data-target="home" data-translate data-key="home">Home</li>
+                    <li data-target="about" data-translate data-key="about">About</li>
+                    <li data-target="explore" data-translate data-key="explore">Explore</li>
+                    <li data-target="contact" data-translate data-key="contact">Contact</li>
                 </ul>
             </div>
             <button class="dynamix-btn"><a href="#">Why Dynamix</a></button>
@@ -57,12 +57,12 @@
     <!-- main body part -->
     <main class="main-container">
     <!-- section one -->
-        <div class="section1">
+        <div id="home" class="section1">
             <div class="title">
                 <h1 data-translate data-key="title" >Dynamix Networks</h1>
                 <h3 data-translate data-key="sub-title" >We are future-proofing<br> non-tech hiring with ownable <br>ideas and scable systems</h3>
                 <p data-translate data-key="sub-title2" >If you are tired of cookies-cutter roles and want to build something that <br>lasts, you are inthe right place.</p>
-                <button id="services-btn" data-translate data-key="services">Our Services</button>
+                <button id="services-btn" data-target="service" data-translate data-key="services">Our Services</button>
             </div>
             <div class="image">
                 <img src="./images/lMS image1.jpg" alt="">
@@ -70,7 +70,7 @@
         </div>
     <!-- section two -->
         <div class="section2">
-            <h4 data-translate data-key="about_us">About Us</h4>
+            <h4 id="about" data-translate data-key="about_us">About Us</h4>
             <p>
                 At Dynamix Networks, we specialize in building bold, human-centered solutions for real-world challenges.
                 Whether it’s crafting standout brand identities, designing independent intern projects, or reimagining
@@ -89,7 +89,7 @@
             <div class="courses">
                 <div class="cousre1 card">
                     <img src="./images/AI fundamental.png" alt="">
-                    <div id="card-name" class="card-name">
+                    <div id="card-name" class="card-name" data-target="all-fields">
                         <span data-translate class="name">AI Fundamentals</span>
                         <span class="arrow">&#8594;</span>
                     </div>
@@ -136,7 +136,7 @@
     <!-- section four -->
         <div class="section4">
             <h2 data-translate data-translate data-key="plan-title" class="plan-title">Choose the Right Development Plan for success</h2>
-            <div class="plans">
+            <div id="explore" class="plans">
                 <div class="Fundamentals skills">
                     <div class="cost">
                         <div class="cost-detail" style=" display:flex; flex-direction: column; gap: 0.8rem;">
@@ -169,7 +169,7 @@
                         </li>
                     </div>
                 </div>
-                <div class="Post-Fundamentals skills">
+                <div id="service" class="Post-Fundamentals skills">
                     <div class="cost">
                         <div class="cost-detail" style=" display:flex; flex-direction: column; gap: 0.8rem;">
                             <h2 data-translate>Post Fundamentals</h2>
@@ -233,19 +233,19 @@
         <div class="section5">
             <h1 data-translate data-key="questions">Questions or concerns?</h1>
             <p data-translate data-key="">Please contact the Dynamix Networks team via email.</p>
-            <button class="emailbtn"><a href="mailto:" data-translate data-key="email-us">EMAIL US</a></button>
+            <button class="emailbtn" id="emailbtn" data-target="email"><a href="mailto:" data-translate data-key="email-us">EMAIL US</a></button>
         </div>
     <!-- section six -->
         <div class="section6" id="courses-field">
             <h2 data-translate data-key="section-title">Life-changing skills to elevate your career</h2>
-            <div class="course-names">
-                <button class="field">AI Fundamentals</button>
+            <div class="course-names" id="all-fields">
+                <button class="field active">AI Fundamentals</button>
                 <button class="field">Data Science</button>
                 <button class="field">Developement</button>
                 <button class="field">Digital Marketing</button>
                 <button class="field">Mobile App Developement</button>
             </div>
-            <div class="all-subjects">
+            <div class="all-subjects" id="all-subjects">
             <!-- AI Fundamentals -->
             <div class="subjects first">
                 <div class="sub sub1">
@@ -565,8 +565,9 @@
                     <li data-translate data-key="contact">Contact</li>
                 </ul>
                 <ul>
-                    <li><a href="">contact</a></li>
-                    <li><a href="">email</a></li>
+                    <li id="contact"><a href="#contact">contact</a></li>
+                    <li id="email"><a href="">email</a></li>
+                    <li><a href="">verified certificates</a></li>
                 </ul>
             </div>
             <!-- copyright -->
