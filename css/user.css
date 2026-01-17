@@ -1,0 +1,316 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root{
+    --bg-color: rgba(108, 144, 144, 0.753);
+    --font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    --bg2-color: rgba(220, 221, 221, 0.539);
+    --btn-color: rgba(160, 235, 170, 0.97);
+    --border-radius: 0.3rem;
+    --color-hover: rgba(151, 202, 195, 0.984);
+    --text-color: rgb(68, 74, 81);
+
+}
+
+
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* header */
+header{
+    width: 100%;
+    height: 15vh;
+    /* position: fixed; */
+    box-shadow: var(--box-shadow)
+}
+
+header .navBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 2rem; */
+}
+
+.navBar .logo {
+    width: 200px;
+    position: absolute;
+    left: 1.5rem;
+    top: 1.5rem;
+
+    >img{
+        width: 190px;
+        height: 8vh;
+    }
+}
+
+.navBar .navmenu{
+    width: fit-content;
+    list-style: none;
+    display: flex;
+    position: absolute;
+    gap: 2rem;
+    top: 2rem;
+    left: 16rem;
+
+    >li{
+        display: flex;
+        gap: 0.5rem;
+        font-weight: 500;
+        color: var(--text-color);
+        font-family: var(--font-family);
+        cursor: pointer;
+
+         >i{
+            margin-top: 0.8rem;
+         }
+    }
+}
+
+.navBar .profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    position: absolute;
+    top: 2rem;
+    right: 1.8rem;
+
+    .profile-pic{
+        width: 40px;
+        border-radius: 50%;
+
+        img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+    }
+}
+
+.navBar .profile span{
+    display: flex;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.navBar .profile span:hover{
+    background-color: var(--color-hover);
+}
+
+/* main part dashboard section1 */
+main{
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-container{
+    width: 100%;
+    top: 8rem;
+    padding-top: 2rem;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 6rem;
+}
+.dashboard-container .section1{
+    display: flex;
+    width: 100%;
+    position: relative;
+    padding: 2rem;
+
+}
+
+.section1 .welcome {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 2rem;
+}
+
+.section1 .welcome .welcome-msg{
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    >h1:hover{
+        color: var(--bg-color);
+        transition: all 0.5s ease-in;
+    }
+
+    >p{
+        color: var(--text-color);
+        font-size: 16px;
+    }
+}
+
+.section1 .welcome .course-status{
+    width: 700px;
+    display: flex;
+    gap: 1rem;
+
+    >.status-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 210px;
+        height: 170px;
+        border-radius: 1.5rem;
+        transition: all 0.5s ease-in-out;
+    }
+
+}
+
+.course-status .status-item span{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-status .status-item h2{
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.course-status .status-item p{
+    font-weight: bold;
+    margin-top: -0.8rem;
+}
+
+/* completed courses card */
+.section1 .welcome .course-status .completed{
+    background: linear-gradient(rgba(227, 244, 244, 0.575), rgba(0, 128, 0, 0.2));
+
+    >span{
+        background-color: rgba(92, 206, 179, 0.587);
+    }
+}
+
+/* enrolled courses card*/
+.section1 .welcome .course-status .enrolled{
+       background: linear-gradient(rgba(202, 208, 226, 0.575), rgba(0, 0, 255, 0.276));
+
+    >span{
+        background-color: rgba(73, 122, 153, 0.587);
+    }
+}
+
+/* in progress courses card */
+.section1 .welcome .course-status .progress{
+       background: linear-gradient(rgb(237, 230, 215), rgba(165, 103, 32, 0.422));
+
+    >span{
+        background-color: rgba(165, 103, 32, 0.283);
+    }
+}
+
+.section1 .welcome .course-status .status-item:hover{
+    box-shadow: var(--box-shadow);
+}
+/* section 1 progress track */
+.dashboard-container .section1 .progress-track{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.section1 .progress-track  >.title{
+    display: flex;
+    gap: 0.6rem;
+    margin-top: -1rem;
+
+    >span{
+        margin-top: 0.2rem;
+        >i{
+            color: indigo;
+        }
+    }
+}
+
+.section1 .progress-track .courses-track{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    border: 0.2px solid gray;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.progress-track .progress-item{
+    padding: 0.6rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease-in-out;
+
+    >p{
+        font-size: 12px;
+    }
+} 
+
+.progress-track .progress-item:hover{
+    box-shadow: var(--box-shadow);
+    background-color: var(--bg2-color);
+    
+}
+.progress-track .progress-item .subject{
+    display: flex;
+    justify-content: space-between;
+
+    >h5{
+        margin-top: 0.6rem;
+    }
+
+    >button{
+        border: none;
+        padding: 0.3rem;
+        border-radius: var(--border-radius);
+        background-color: rgba(129, 198, 176, 0.311);
+        color: var(--text-color);
+    }
+}
+
+.progress-track .progress-item .subject >button:hover{
+    background-color:var(--btn-color);
+    color: var(--text-color);
+}
+
+.progress-track .progress-item .progress-bar{
+    width: 100%;
+    height: 10px;
+    border-radius: var(--border-radius);
+    background-color: var(--bg2-color);
+
+    >.progress-fill{
+        height: 10px;
+        border-radius: var(--border-radius);
+        background-color: var(--btn-color);
+    }
+}

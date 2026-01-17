@@ -4,19 +4,179 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamix Network LMS</title>
+    <link rel="stylesheet" href="./css/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 </head>
 <body>
     <header>
-        <div class="logo"></div>
         <div class="navBar">
-            <ul>
-                <li>Dashboard</li>
-                <li>My Courses</li>
-                <li>Assignment</li>
-                <li>Progress</li>
+            <div class="logo">
+                <img src="./images/logo.lms.jpg" alt="">
+            </div>
+            <ul class="navmenu">
+                <li><i class="fa-duotone fa-solid fa-book-open fa-xl"></i>Dashboard</li>
+                <li><i class="fa-solid fa-graduation-cap fa-xl"></i>My Courses</li>
+                <li><i class="fa-solid fa-graduation-cap fa-xl"></i>Progress</li>
             </ul>
+            <div class="profile">
+                <span data-translate class="language-icon" id="lang-text">EN</span> 
+                <span class="toggle-screen"><i class="fa-solid fa-expand"></i></span>
+                <span class="notify-icon"><i class="fa-regular fa-bell"></i></span>
+                <span class="profile-pic">
+                    <img src="./images/avatar1.webp" alt="avator">
+                </span>
         </div>
-        <button></button>
     </header>
+    <main>
+        <!-- dashboard -->
+        <div class="dashboard-container">
+            <div class="section1">
+                <div class="welcome">
+                    <div class="welcome-msg">
+                        <h1>welcome to <span><br>Dynamix Network</span></h1>
+                        <p>Your learning journey starts here. Explore courses, track your progress, <br>and achieve your goals with us!</p>
+                    </div>
+                    <!-- course status -->
+                    <div class="course-status">
+                        <div class="status-item completed" id="status-item">
+                            <span><i class="fa-solid fa-circle-check" style="color: green;"></i></span>
+                            <h2>4</h2>
+                            <p>Completed</p>
+                        </div>
+                        <div class="status-item enrolled" id="status-item">
+                            <span><i class="fa-solid fa-graduation-cap fa-sm"></i></span>
+                            <h2>1</h2>
+                            <p>Enrolled</p>
+                        </div>
+                        <div class="status-item progress" id="status-item">
+                            <span><i class="fa-solid fa-arrow-down"></i></span>
+                            <h2>3</h2>
+                            <p>In Progress</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- progress track -->
+                <div class="progress-track">
+                    <div class="title">
+                        <span class="icon"><i class="fa-solid fa-bullhorn fa-xl"></i></span>
+                        <h2>Important Notice</h2>
+                    </div>
+                    <!-- classes in progress track -->
+                    <div class="courses-track">
+                        <h5><i class="fa-solid fa-circle fa-beat-fade fa-2xs" style="color: #63E6BE;"></i>   In-Progress Courses</h5>
+                        <!-- first inprogress course -->
+                        <div class="progress-item">
+                            <div class="subject">
+                                <h5>AI Chatbot for beginners</h5>
+                                <button>Resume &#8594;</button>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                            <p>75% Complete</p>
+                        </div>
+                        <!-- second in progress course -->
+                         <div class="progress-item">
+                            <div class="subject">
+                                <h5>python Programming</h5>
+                                <button>Resume &#8594;</button>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 40%;"></div>
+                            </div>
+                            <p>40% Complete</p>
+                        </div>
+                        <!-- 3rd in progress course -->
+                        <div class="progress-item">
+                            <div class="subject">
+                                <h5>React.js</h5>
+                                <button>Resume &#8594;</button>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%;"></div>
+                            </div>
+                            <p>50% Complete</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section2">
+                <div class="recomended">
+                    <span class="icon"></span>
+                    <h1>Recommended Courses</h1>
+                </div>
+                <div class="courses">
+                    <span class="icon"></span>
+                    <h4></h4>
+                    <button><a href="http://"></a></button>
+                </div>
+            </div>
+            <div class="section3">
+                <div class="upcoming-events">
+                    <span class="icon"></span>
+                    <p>Upcoming Events</p>
+                </div>
+                <div class="pending">
+                    <span class="icon"></span>
+                    <p></p>
+                </div>
+                <div class="deadlines">
+                    <span class="icon"></span>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <!-- Explore Courses -->
+        <div class="explore-container">
+            <div class="section1">
+                <h1></h1>
+                <p></p>
+            </div>
+            <div class="section2">
+                <div class="search">
+                    <option value="">
+                        <select name="" id=""></select>
+                    </option>
+                    <input type="search" name="" id="">
+                </div>
+                <div class="enrolled-subjects">
+                    <div class="subject-card">
+                        <span class="icon"></span>
+                        <h2></h2>
+                        <p></p>
+                        <button><a href="http://"></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="section3">
+                <p class="pages"></p>
+                <option value="" class="page-option"></option>
+                <span class="icon"></span>
+            </div>
+        </div>
+        <!-- my courses -->
+        <div class="courses-container">
+            <div class="section1">
+                <div class="select-part"></div>
+            </div>
+            <div class="section2">
+                <div class="my-courses"></div>
+            </div>
+             <div class="section3">
+                <p class="pages"></p>
+                <option value="" class="page-option"></option>
+                <span class="icon"></span>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="copyright">
+            <p>&copy; 2024 Dynamix Networks. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Verify Certificate</a>
+    </footer>
 </body>
 </html>
