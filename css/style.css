@@ -56,7 +56,7 @@ header{
     }
 }
 
-/* language dropdown  */
+/* subheader language dropdown  */
 .sub-header .dropdown-lang{
     position: absolute;
     display: none;
@@ -66,9 +66,10 @@ header{
     height: auto;
     padding: 1rem;
     right: 3rem;
-     top: 2.4rem;
+    top: 2.4rem;
     background-color: rgb(248, 250, 252);
     z-index: 10;
+
 }
 
 .dropdown-lang #language-option{
@@ -91,6 +92,41 @@ header{
     }
 
 }
+/* subheader user dropdown */
+.sub-header .user-dropdown{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+    height: auto;
+    padding: 1rem;
+    right: 4rem;
+    top: 2.4rem;
+    background-color: rgb(248, 250, 252);
+    z-index: 10;
+}
+
+.sub-header .user-dropdown #user{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    >li{
+        list-style: none;
+        cursor: pointer;
+        font-size: 12px;
+    }
+}
+
+.sub-header .user-dropdown #sign-out{
+    width: fit-content;
+    padding: 0.2rem 0.5rem;
+    border: none;
+    align-self: flex-end;
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+}
 
 /* main header part */
 .header-container{
@@ -98,7 +134,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
 }
 
 .logo{
@@ -123,10 +159,10 @@ header{
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        margin-top: 0.8rem;
+        margin-top: 1.5rem;
 
         >li{
-            width: 90px;
+            width: 95px;
             padding-left: 1rem;
             padding-bottom: 0.8rem;
             list-style: none;
@@ -163,6 +199,21 @@ header{
         font-weight: 700;
         color: black;
     }
+}
+
+/* dynamix dropdown deetail option */
+.dropdown-details{
+    display: none;
+    width: 400px;
+    height: auto;
+    background-color: var(--bg-color);
+    padding: 1rem;
+    position: absolute;
+    top: 7rem;
+    right: 9rem;
+    z-index: 20;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .search-icon{

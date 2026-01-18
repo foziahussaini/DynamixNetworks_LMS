@@ -11,26 +11,26 @@
 <body>
     <header>
         <div class="navBar">
-            <div class="logo">
+            <div class="logo" id="logo">
                 <img src="./images/logo.lms.jpg" alt="">
             </div>
             <ul class="navmenu">
-                <li><i class="fa-duotone fa-solid fa-book-open fa-xl"></i>Dashboard</li>
-                <li><i class="fa-solid fa-graduation-cap fa-xl"></i>My Courses</li>
-                <li><i class="fa-solid fa-graduation-cap fa-xl"></i>Progress</li>
+                <li id="dashboard"><i class="fa-duotone fa-solid fa-book-open fa-xl"></i>Dashboard</li>
+                <li id="my-courses"><i class="fa-solid fa-graduation-cap fa-xl"></i>My Courses</li>
+                <li id="progress"><i class="fa-solid fa-graduation-cap fa-xl"></i>Progress</li>
             </ul>
             <div class="profile">
                 <span data-translate class="language-icon" id="lang-text">EN</span> 
-                <span class="toggle-screen"><i class="fa-solid fa-expand"></i></span>
-                <span class="notify-icon"><i class="fa-regular fa-bell"></i></span>
-                <span class="profile-pic">
+                <span class="toggle-screen" id="toggle-screen"><i class="fa-solid fa-expand"></i></span>
+                <span class="notify-icon" id="notification"><i class="fa-regular fa-bell"></i></span>
+                <span class="profile-pic" id="prof-picture">
                     <img src="./images/avatar1.webp" alt="avator">
                 </span>
         </div>
     </header>
     <main>
         <!-- dashboard -->
-        <div class="dashboard-container">
+        <div class="dashboard-container" id="dashboard-container">
             <div class="section1">
                 <div class="welcome">
                     <div class="welcome-msg">
@@ -41,17 +41,17 @@
                     <div class="course-status">
                         <div class="status-item completed" id="status-item">
                             <span><i class="fa-solid fa-circle-check" style="color: green;"></i></span>
-                            <h2>4</h2>
+                            <h2>0</h2>
                             <p>Completed</p>
                         </div>
                         <div class="status-item enrolled" id="status-item">
                             <span><i class="fa-solid fa-graduation-cap fa-sm"></i></span>
-                            <h2>1</h2>
+                            <h2>0</h2>
                             <p>Enrolled</p>
                         </div>
                         <div class="status-item progress" id="status-item">
                             <span><i class="fa-solid fa-arrow-down"></i></span>
-                            <h2>3</h2>
+                            <h2>0</h2>
                             <p>In Progress</p>
                         </div>
                     </div>
@@ -101,34 +101,54 @@
                     </div>
                 </div>
             </div>
+            <!-- section 2 -->
             <div class="section2">
+                <hr style="width: 60%; margin-left: 3rem; border: 0.3px solid rgba(128, 128, 128, 0.128);">
                 <div class="recomended">
-                    <span class="icon"></span>
+                    <span class="icon"><svg _ngcontent-ng-c284394575="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 mr-2"><path _ngcontent-ng-c284394575="" fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path></svg></span>
                     <h1>Recommended Courses</h1>
                 </div>
                 <div class="courses">
-                    <span class="icon"></span>
-                    <h4></h4>
-                    <button><a href="http://"></a></button>
+                    <span class="icon"><svg _ngcontent-ng-c284394575="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-10 w-10 mx-auto text-gray-400 dark:text-gray-500"><path _ngcontent-ng-c284394575="" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></span>
+                    <p>No Course recommendations available</p>
+                    <button><a href="http://">Browse available courses</a></button>
                 </div>
             </div>
             <div class="section3">
-                <div class="upcoming-events">
-                    <span class="icon"></span>
-                    <p>Upcoming Events</p>
+                <div class="upcoming-events event">
+                    <div class="head">
+                        <span class="icon"><svg _ngcontent-ng-c284394575="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-10 w-10 mx-auto text-gray-400 dark:text-gray-500"><path _ngcontent-ng-c284394575="" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></span>
+                        <h5>Upcoming Events</h5>
+                    </div>
+                    <div class="detail">
+                        <span class="icon"><svg _ngcontent-ng-c284394575="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-10 w-10 mx-auto text-gray-400 dark:text-gray-500"><path _ngcontent-ng-c284394575="" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></span>
+                        <p>no upcoming evets</p>
+                    </div>
                 </div>
-                <div class="pending">
-                    <span class="icon"></span>
-                    <p></p>
+                <div class="pending event">
+                    <div class="head">
+                        <span class="icon"></span>
+                        <h5>Pending Events</h5>
+                    </div>
+                    <div class="detail">
+                        <span class="icon"><svg _ngcontent-ng-c284394575="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-10 w-10 mx-auto text-gray-400 dark:text-gray-500"><path _ngcontent-ng-c284394575="" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></span>
+                        <p>No pending events</p>
+                    </div>
                 </div>
-                <div class="deadlines">
-                    <span class="icon"></span>
-                    <p></p>
+                <div class="deadlines event">
+                    <div class="head">
+                        <span class="icon"></span>
+                        <h5>Deadline</h5>
+                    </div>
+                    <div class="detail">
+                        <span class="icon"><svg _ngcontent-ng-c284394575="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-10 w-10 mx-auto text-gray-400 dark:text-gray-500"><path _ngcontent-ng-c284394575="" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></span>
+                        <p>No Deadlines</p>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- Explore Courses -->
-        <div class="explore-container">
+        <div class="explore-container" id="explore-container">
             <div class="section1">
                 <h1></h1>
                 <p></p>
@@ -156,7 +176,7 @@
             </div>
         </div>
         <!-- my courses -->
-        <div class="courses-container">
+        <div class="courses-container" id="courses-container">
             <div class="section1">
                 <div class="select-part"></div>
             </div>
@@ -178,5 +198,7 @@
             <a href="#">About Us</a>
             <a href="#">Verify Certificate</a>
     </footer>
+
+    <script src="./JS/user.js"></script>
 </body>
 </html>

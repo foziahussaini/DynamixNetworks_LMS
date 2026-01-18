@@ -124,10 +124,10 @@ language.forEach((option) => {
 
 
 // sign up form validation
-const btn = document.getElementById("btn");
+const signUp = document.getElementById("btn");
 const inputs = document.querySelectorAll("input[required]");
 
-btn.addEventListener("click", (event) => {
+signUp.addEventListener("click", (event) => {
     event.preventDefault(); 
     let allInputsFilled = true;
 
@@ -154,10 +154,20 @@ btn.addEventListener("click", (event) => {
             password: password 
         };
 
-        const formDataJSON = JSON.stringify(formData);
-
+         const formDataJSON = JSON.stringify(formData);
         localStorage.setItem("registrationData", formDataJSON);
-        window.location.href = "./student.html";
+      
+        const userRole = document.getElementById("profession").value;
+        localStorage.setItem("userRole", userRole);
+
+        // Perform the redirection immediately here:
+        if (userRole === "student") {
+          window.location.href = "./user.html";
+        } else if (userRole === "admin") {
+          window.location.href = "admin.html";
+        } else {
+            alert("Invalid profession specified. Cannot navigate.");
+        }
     }
 });
 
@@ -182,3 +192,5 @@ signUpBtn.addEventListener("mouseover", () => {
 signUpBtn.addEventListener("mouseleave", () => {
     signUpBtn.style.backgroundColor = defaultColor;
 });
+
+

@@ -179,8 +179,9 @@ language.forEach((option) => {
 // *************************************************************************************
 
 // All button hover method 
-// dynamix-btn at header hover
+// dynamix-btn at header hover and dropdown show for details
 const dynamixBtn = document.querySelector("button");
+const dropdownDetail = document.getElementById("dropdown-details");
 
 function CssVaraible(variableName) {
     const rootStyles = getComputedStyle(document.documentElement);
@@ -192,6 +193,7 @@ const hoverColor = CssVaraible('--color-hover');
 const defaultColor = CssVaraible('--bg-color');
 dynamixBtn.style.transition = "background-color 0.3s ease-in-out";
 
+// dynamix btn hover
 dynamixBtn.addEventListener("mouseover", () => {
   dynamixBtn.style.backgroundColor = hoverColor; 
 });
@@ -320,15 +322,81 @@ enrollBtns.forEach(enrollBtn => {
 // linked and navigated options parts and pages 
 
 // login button link to login page
+const isLoggedIn = () => !!localStorage.getItem("userRole");
 const loginBtn = document.getElementById("login");
+const signOutBtn = document.getElementById("sign-out");
+const userDropdown = document.getElementById("user-dropdown");
+const userEmailElement = document.getElementById("user-email");
+const userRoleElement = document.getElementById("user-role")
+
+// Function to simulate a successful login
+function simulateLogin() {
+    // these values come from an authentication response
+    localStorage.setItem("userRole", "admin");
+    localStorage.setItem("userEmail", "user@example.com");
+    console.log("User logged in.");
+    updateUI();
+}
+// sign out function for user signout
+function signOut() {
+    localStorage.removeItem("userRole");
+    localStorage.removeItem("userEmail");
+    console.log("User signed out.");
+    updateUI();
+    // Hide the dropdown after signing out
+    userDropdown.style.display = "none";
+}
+// Function to update the button and dropdown state
+function updateUI() {
+    if (isLoggedIn()) {
+        // If logged in: update dropdown content and change button text if needed
+        const firstName = localStorage.setItem("firstName");
+        const lastName = localStorage.setItem("lastName");
+        const email = localStorage.getItem("userEmail");
+        const role = localStorage.getItem("userRole");
+        userEmailElement.textContent = email;
+        userRoleElement.textContent = role;
+        userDropdown.style.display = "none";
+  // if logged in login button change to user name
+        const userName = (firstName && lastName) ? `${firstName} ${lastName}` : email || "User Profile";
+        loginBtn.innerHTML = `<span class="user">${userName}</span>`;
+    } else {
+  // If logged out: change button text back to "Login"
+        loginBtn.textContent = "Login";
+    }
+}
+// show dropdown by clicking the login btn and navigate to register form if not logged in
 loginBtn.addEventListener("click", () => {
-  window.location.href = "./register.html";
+    if (isLoggedIn()) {
+        userDropdown.style.display = "flex";
+    } else {
+        // If not logged in, simulate a login (or redirect to a login page)
+        window.location.href = "./register.html"
+    }
 });
+
+signOutBtn.addEventListener("click", signOut);
+updateUI();
 
 // navbar links to sections
 document.addEventListener("DOMContentLoaded", () => {
   const menuItems = document.querySelectorAll(".navBar li");
   const ServicesBtn = document.querySelectorAll("[data-target]");
+
+  // dashboard li navBar btn navigate to user dashboard and admin dashboard
+  const dashboardBtn = document.getElementById("dashboard");
+  dashboardBtn.addEventListener("click", () =>{
+    const userRole = localStorage.getItem("userRole");
+
+    if(userRole === "student"){
+      window.location.href = "./user.html";
+    }else if (userRole === "admin"){
+      window.location.href = "./admin.html";
+    }else{
+      alert("please login  again");
+      window.location.href = "./register.html";
+    }
+  });
 
   // services button navigation section1 to section4
   ServicesBtn.forEach(btn => {  
