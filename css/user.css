@@ -474,13 +474,22 @@ main{
 .explore-container  .section2{
     width: 100%;
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
+
+    >.first-row{
+        display: flex;
+        justify-content: space-between;
+        gap: 10rem;
+    }
 }
+
 
 .explore-container  .section2 .categories-select-button{
     width: 340px;
     height: 45px;
+    border: 1px solid;
+    border-color: var(--color-hover);
     border-radius: var(--border-radius);
     background-color: var(--bg2-color);
     position: relative;
@@ -492,6 +501,7 @@ main{
     >.categories{
         width: 350px;
         height: 45px;
+        border-color: var(--bg2-color);
         border-radius: var(--border-radius);
         background-color: var(--bg2-color);
         padding: 0.8rem 1rem;
@@ -519,7 +529,7 @@ main{
     overflow-y: scroll;
     position: absolute;
     top: 2.8rem;
-    left: 2rem;
+    left: 13rem;
 
     >.menu-item{
         padding: 0.5rem 1rem;
@@ -551,10 +561,42 @@ main{
     justify-content: center;
 
     >input{
-        
+        width: 350px;
+        height: 40px;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        background-color: var(--bg2-color);
+        outline: none;
+        border: 1px solid;
+        border-color: var(--color-hover);
+    }
+
+    >.icon{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 1rem;
+         
+        >svg{
+            width: 30px;
+            height: 30px;
+        }
     }
 }
 
+.section2 .search-option .icon>svg:hover{
+    fill: var(--color-hover);
+    transition: all 0.3s ease-in-out;
+}
+
+.resultsDisplay{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    color: var(--text-color);
+    margin-top: 2rem;
+}
 /* footer */
 footer{
     width: 100%;

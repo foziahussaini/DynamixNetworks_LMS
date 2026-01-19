@@ -111,10 +111,17 @@ selectIcon.addEventListener("click", () => {
   const categoriesItems = document.querySelectorAll(".menu-item");
   const resultsDisplay = document.getElementById("resultsDisplay");
   const loadingMessage = document.getElementById("loadingMessage");
+  
 
   categoriesItems.forEach((item) => {
-    item.addEventListener("click", () => {
+    item.addEventListener("click", (event) => {
         
+         if (item.tagName === 'A') {
+          event.preventDefault(); 
+      }
+         if (loadingMessage) {
+        loadingMessage.textContent = "Loading... please wait.";}
+
         categoriesItems.forEach(i => {
         i.classList.remove('active');
          i.style.color = ''; 
@@ -123,7 +130,16 @@ selectIcon.addEventListener("click", () => {
       item.classList.add('active'); 
       dropdownCategories.style.display = "none";
       item.style.color = hoverColor;
+
+      if (item.innerHTML.trim() === "Mathematics" || item.innerHTML.trim() === "Game Development") {
+        resultsDisplay.style.display = "flex";
+        return;
+      }
       
+      setTimeout(() => {
+        window.location.href = "./index.html#courses-field";
+      }, 1000);
     });
   });
 });
+

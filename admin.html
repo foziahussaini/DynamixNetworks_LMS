@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamix Network LMS</title>
+    <link rel="stylesheet" href="./css/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+
+<!-- Add Course -->
+<section>
+  <h2>Add New Course</h2>
+  <input type="text" id="courseTitle" placeholder="Course title">
+  <input type="text" id="courseDesc" placeholder="Description">
+  <input type="number" id="coursePrice" placeholder="Price">
+  <button onclick="addCourse()">Add Course</button>
+</section>
+
+<!-- Course List -->
+<section>
+  <h2>All Courses</h2>
+  <div id="courseList"></div>
+</section>
+
+<script src="./JS/admin.js"></script>
+</body>
+</html>
