@@ -180,9 +180,14 @@ language.forEach((option) => {
 
 // All button hover method 
 // dynamix-btn at header hover and dropdown show for details
-const dynamixBtn = document.querySelector("button");
-const dropdownDetail = document.getElementById("dropdown-details");
+  const dynamixBtn = document.getElementById('dynamix-btn');
+  const dropdownDetails = document.getElementById('dropdown-details');
 
+    dynamixBtn.addEventListener('click', function() {
+        dropdownDetails.classList.toggle('active');
+    });
+
+    // linked to css variable rootstyles
 function CssVaraible(variableName) {
     const rootStyles = getComputedStyle(document.documentElement);
     return rootStyles.getPropertyValue(variableName).trim();
@@ -201,6 +206,33 @@ dynamixBtn.addEventListener("mouseover", () => {
 dynamixBtn.addEventListener("mouseleave", () => {
     dynamixBtn.style.backgroundColor = defaultColor;
 });
+
+// searchbar icon hover and dropdown show for searching
+const searchIcon = document.getElementById("searchIcon")
+const searchBarDropdown = document.getElementById("searchbardropdown");
+
+        
+searchIcon.addEventListener('click', () => {
+  searchBarDropdown.classList.toggle('active');
+});
+
+// search input work with enter key and search for data inside the site and show result
+function clickEnter(event) {
+    if (event.key === 'Enter') {
+        searchData();
+    }
+}
+
+function searchData() {
+    const searchData = document.getElementById('search').value;
+
+    if (searchData.trim() === "") {
+      alert("Please enter a search term.");
+         return;
+   }
+
+    localStorage.setItem('lastSearchData', searchData);
+}
 
 // header navbar ul >li hover and active
 const liMenu = document.querySelectorAll("li");

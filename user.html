@@ -117,7 +117,7 @@
             <div class="section3">
                 <div class="upcoming-events event">
                     <div class="head">
-                        <span class="icon"><svg _ngcontent-ng-c284394575="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-10 w-10 mx-auto text-gray-400 dark:text-gray-500"><path _ngcontent-ng-c284394575="" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></span>
+                        <span class="icon"></span>
                         <h5>Upcoming Events</h5>
                     </div>
                     <div class="detail">
@@ -150,16 +150,32 @@
         <!-- Explore Courses -->
         <div class="explore-container" id="explore-container">
             <div class="section1">
-                <h1></h1>
-                <p></p>
+                <h1>Transforming Futures through Technology</h1>
+                <p>Welcome to Dynamix Network, where technology meets opportunity. Designed to help learners grow, innovate, <br> achieve their goals through smart and flexible learning.</p>
             </div>
             <div class="section2">
-                <div class="search">
-                    <option value="">
-                        <select name="" id=""></select>
-                    </option>
+                <div class="categories-select-button" id="categoriesBtn">
+                    <div class="categories" id="categories">All Categories</div>
+                    <span class="icon" id="icon"><i class="fa-solid fa-caret-down fa-sm"></i></span>
+                </div>
+                <div class="categories-menu" id="categoriesMenu">
+                    <div id="menu-item" class="menu-item active">All Categories</div>
+                    <div id="menu-item" class="menu-item">Mobile App Development</div>
+                    <div id="menu-item" class="menu-item">Mathematics</div>
+                    <div id="menu-item" class="menu-item">Web Development</div>
+                    <div id="menu-item" class="menu-item">Programming & <br>Software Development</div>
+                    <div id="menu-item" class="menu-item">Graphic Design</div>
+                    <div id="menu-item" class="menu-item">Game Development</div>
+                    <div id="menu-item" class="menu-item">Clout Computing</div>
+                    <div id="menu-item" class="menu-item">Data Science</div>
+                    <div id="menu-item" class="menu-item">Digital Marketing</div>
+                    <div id="menu-item" class="menu-item">AI Fundamental</div>
+                </div>
+                <div class="search-option">
+                    <span class="icon"></span>
                     <input type="search" name="" id="">
                 </div>
+                <div style="display: none;" class="resultsDisplay"><p></p></div>
                 <div class="enrolled-subjects">
                     <div class="subject-card">
                         <span class="icon"></span>
@@ -191,12 +207,14 @@
         </div>
     </main>
     <footer>
-        <div class="copyright">
-            <p>&copy; 2024 Dynamix Networks. All rights reserved.</p>
-        </div>
         <div class="footer-links">
             <a href="#">About Us</a>
             <a href="#">Verify Certificate</a>
+        </div>
+        <hr style="width: 100%; border: 0.3px solid rgba(128, 128, 128, 0.128);">
+         <div class="copyright">
+            <p>&copy; 2024 Dynamix Networks. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="./JS/user.js"></script>
