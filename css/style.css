@@ -641,7 +641,6 @@ header{
 .section6 .all-subjects .subjects .sub .enroll-btn{
     display: flex;
     gap: 6.5rem;
-    margin-top: 1rem;
     cursor: pointer;
 
     >p{

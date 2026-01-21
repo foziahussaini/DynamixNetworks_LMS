@@ -19,6 +19,9 @@
 }
 
 @media(max-width: 650px){
+    .header{
+        height: 5vh;
+    }
     .header .logo{
         width: 100px;
 
@@ -35,7 +38,11 @@
 
 @media(max-width: 500px){
     .header{
-        height: 5vh;
+        height: 4vh;
+    }
+    .header .lang{
+        font-size: 0.8rem;
+        font-weight: 300;
     }
     .header .logo{
         width: 100px;
@@ -63,7 +70,7 @@
 
 @media(max-width: 430px){
     .header{
-        height: 5vh;
+        height: 4vh;
     }
 
     .header .logo{

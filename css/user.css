@@ -98,6 +98,35 @@ header .navBar{
     }
 }
 
+/* language dropdown part */
+.profile .dropdown-lang{
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    width: 160px;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    display: none;
+    z-index: 100;
+}
+
+.profile .dropdown-lang ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.profile .dropdown-lang ul li{
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.profile .dropdown-lang ul li:hover{
+    background-color: var(--bg-color);
+}
+
 .navBar .profile span{
     display: flex;
     border-radius: 50%;
@@ -112,7 +141,7 @@ header .navBar{
     background-color: var(--color-hover);
 }
 
-/* main part dashboard section1 */
+/* main part*/
 main{
     width: 100%;
     display: flex;
@@ -122,6 +151,7 @@ main{
     justify-content: center;
 }
 
+/*  dashboard section1  */
 .dashboard-container{
     width: 100%;
     top: 8rem;
@@ -139,6 +169,7 @@ main{
 
 }
 
+/* dashboard section1 */
 .section1 .welcome {
     display: flex;
     flex-direction: column;
@@ -159,7 +190,7 @@ main{
 
     >p{
         color: var(--text-color);
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
@@ -315,7 +346,7 @@ main{
     }
 }
 
-/* user dashboard section 2 */
+/*  dashboard section 2 */
 .section2{
     display: flex;
     flex-direction: column;
@@ -388,7 +419,7 @@ main{
     color: var(--color-hover);
 }
 
-/* section3 of user dashboard */
+/* dashboard section3*/
 .section3{
     width: 100%;
     display: flex;
@@ -442,12 +473,12 @@ main{
     }
 }
 /* end of dashboard part */
-
+/* -------------------------------------------------------------------------------------- */
 /* explore courses part */
 .explore-container{
     width: 100%;
     top: 8rem;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex: 1;
@@ -455,6 +486,7 @@ main{
     gap: 2rem;
 }
 
+/* explore courses section1 */
 .explore-container .section1{
     width: 100%;
     height: 40vh;
@@ -471,6 +503,7 @@ main{
     }
 }
 
+/* explore courses section2 */
 .explore-container  .section2{
     width: 100%;
     position: relative;
@@ -479,7 +512,7 @@ main{
 
     >.first-row{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         gap: 10rem;
     }
 }
@@ -549,7 +582,7 @@ main{
     color: var(--color-hover);
 }
 
-/* serch input */
+/* search input */
 .section2 .search-option{
     width: 350px;
     height: 40px;
@@ -589,6 +622,7 @@ main{
     transition: all 0.3s ease-in-out;
 }
 
+/* search result display */
 .resultsDisplay{
     display: none;
     justify-content: center;
@@ -597,6 +631,171 @@ main{
     color: var(--text-color);
     margin-top: 2rem;
 }
+/* end of explore courses */
+/* -------------------------------------------------------------------------------------- */
+/* my courses part of user  */
+main .courses-container{
+    width: 100%;
+    margin-left: 5rem;
+    padding: 2rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* my courses section1 */
+.courses-container .section1{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    >.first-row{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
+}
+
+/* my courses select course categories */
+.section1 .first-row .categories-select-button{
+    width: 320px;
+    height: 45px;
+    border: 1px solid;
+    border-color: var(--color-hover);
+    border-radius: var(--border-radius);
+    background-color: var(--bg2-color);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+
+    >.categories{
+        width: 330px;
+        height: 45px;
+        border-color: var(--bg2-color);
+        border-radius: var(--border-radius);
+        background-color: var(--bg2-color);
+        padding: 0.8rem 1rem;
+        color: var(--text-color);
+        font-size: 16px;
+    }
+
+    >.icon{
+        position: absolute;
+        right: 1.8rem;
+        cursor: pointer;
+        transition: all 0.5s ease-in;
+    }
+}
+
+/* my courses hover  */
+.courses-container .section1 .categories-menu.active{
+    display: flex;
+}
+
+.courses-container .section1 .categories-menu .menu-item:hover{
+    background-color: var(--bg2-color);
+}
+
+.courses-container .section1 .categories-menu .menu-item.active{
+    color: var(--color-hover);
+}
+
+/* my courses select categories dropdown */
+.section1 .categories-menu{
+    width: 330px;
+    height: 250px;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background-color: var(--bg2-color);
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 8.5rem;
+    overflow-y: scroll;
+    position: relative;
+
+    >.menu-item{
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+    }
+}
+
+/* my courses search part */
+.section1 .search-option{
+    width: 350px;
+    height: 40px;
+    border-radius: var(--border-radius);
+    background-color: var(--bg2-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >input{
+        width: 350px;
+        height: 40px;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        background-color: var(--bg2-color);
+        outline: none;
+        border: 1px solid;
+        border-color: var(--color-hover);
+    }
+
+    >.icon{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 1rem;
+         
+        >svg{
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+/* search option hover */
+.section1 .search-option .icon>svg:hover{
+    fill: var(--color-hover);
+    transition: all 0.3s ease-in-out;
+}
+
+.section1 .first-row .compelete-courses{
+    width: 170px;
+    height: 20px;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    
+    >div{
+        width: 30px;
+        height: 10px;
+        border-radius: var(--border-radius);
+        background-color: var(--bg-color);
+
+        >div{
+            width: 20px;
+            height: 20px;
+            background-color: var(--btn-color);
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+        }
+    }
+    
+}
+
+
 /* footer */
 footer{
     width: 100%;
@@ -643,4 +842,76 @@ footer .copyright{
         font-size: 14px;
         color: gray;
     }
+}
+
+/* enrolled courses */
+.courses-container .my-courses {
+    height: auto;
+    min-height: 40vh;
+    margin-bottom: 2rem;
+}
+
+/* grid layout */
+.courses-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* individual course card */
+.course-card {
+  background-color: var(--bg2-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem;
+  margin-top: 2rem;
+  gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* hover effect */
+.course-card:hover {
+  transform: translateY(-6px);
+}
+
+/* course image */
+.course-card img {
+  width: 100%;
+  height: 140px;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+}
+
+/* title */
+.course-card h4 {
+  font-size: 1rem;
+  color: #111827;
+}
+
+/* price */
+.course-card p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* continue button */
+.course-card .resume-btn {
+    align-self: flex-end;
+    width: fit-content;
+    margin: 1rem;
+    padding: 0.6rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--btn-color);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.course-card .resume-btn:hover {
+  background-color: var(--color-hover);
 }

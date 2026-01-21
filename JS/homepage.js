@@ -1,6 +1,6 @@
 // language Part
 document.addEventListener("DOMContentLoaded", () => {
-  const langText = document.getElementById("lang-text");
+   const langText = document.getElementById("lang-text");
   const languageOptions = document.querySelectorAll("#language-option li");
 
   // language json part added 
@@ -172,8 +172,7 @@ language.forEach((option) => {
   option.addEventListener("click", () => {
     dropdownLang.style.display = "none";
   });
-}
-);
+});
 // end of language part
 
 // *************************************************************************************
@@ -188,9 +187,11 @@ language.forEach((option) => {
     });
 
     // linked to css variable rootstyles
-function CssVaraible(variableName) {
-    const rootStyles = getComputedStyle(document.documentElement);
-    return rootStyles.getPropertyValue(variableName).trim();
+    // fuction CSS variable
+function CssVaraible(name) {
+  return getComputedStyle(document.documentElement)
+    .getPropertyValue(name)
+    .trim();
 }
 
 //  CSS variables
@@ -247,11 +248,6 @@ liMenu.forEach(li =>{
 // services btn at first section hover
 const ServicesBtn = document.getElementById("services-btn");
 
-function CssVaraible(variableName) {
-    const rootStyles = getComputedStyle(document.documentElement);
-    return rootStyles.getPropertyValue(variableName).trim();
-}
-
 //  CSS variables
 const hoveredColor = CssVaraible('--color-hover');
 const defaultsColor = CssVaraible('--bg-color');
@@ -288,9 +284,8 @@ const defaultsColors = CssVaraible('--bg2-color');
 
 involvedBtns.forEach(involvedBtn => {
   involvedBtn.addEventListener("mouseover", () =>{
-    involvedBtn.style.transition = "background-color 0.5s ease-in-out";
     involvedBtn.style.backgroundColor = hoverColor;
-})
+});
 
 involvedBtn.addEventListener("mouseleave", () => {
     involvedBtn.style.backgroundColor = defaultsColors;
@@ -306,33 +301,6 @@ emailBtn.addEventListener("mouseover", () =>{
 emailBtn.addEventListener("mouseleave", () =>{
   emailBtn.style.backgroundColor = defaultsColors;
 })
-
-// section six hover enrollbtn and active field
-document.addEventListener('DOMContentLoaded', (event) => {
-    const courseFields = document.querySelectorAll(".field");
-
-    courseFields.forEach(field => {
-      field.addEventListener("mouseover", () =>{
-        field.style.transition = "color 0.5s ease-in-out";
-        field.style.backgroundColor = hoverColor;
-    });
-    });
-
-    courseFields.forEach(field => {
-      field.addEventListener("mouseleave", () => {
-        field.style.backgroundColor = "transparent";
-    });
-  }); 
-
-    courseFields.forEach(field => {
-      field.addEventListener("click", () => {
-        courseFields.forEach(sub => {
-          sub.classList.remove("active");
-        });
-      field.classList.add("active");
-    });
-  });
-});
 
 // hover enroll btns in section6
 const enrollBtns = document.querySelectorAll("button");
@@ -375,15 +343,14 @@ function signOut() {
     localStorage.removeItem("userEmail");
     console.log("User signed out.");
     updateUI();
-    // Hide the dropdown after signing out
     userDropdown.style.display = "none";
 }
 // Function to update the button and dropdown state
 function updateUI() {
     if (isLoggedIn()) {
         // If logged in: update dropdown content and change button text if needed
-        const firstName = localStorage.setItem("firstName");
-        const lastName = localStorage.setItem("lastName");
+        const firstName = localStorage.getItem("firstName");
+        const lastName = localStorage.getItem("lastName");
         const email = localStorage.getItem("userEmail");
         const role = localStorage.getItem("userRole");
         userEmailElement.textContent = email;
@@ -399,11 +366,11 @@ function updateUI() {
 }
 // show dropdown by clicking the login btn and navigate to register form if not logged in
 loginBtn.addEventListener("click", () => {
-    if (isLoggedIn()) {
+    if (isLoggedIn() || userDropdown.style.display === "none") {
         userDropdown.style.display = "flex";
     } else {
-        // If not logged in, simulate a login (or redirect to a login page)
-        window.location.href = "./register.html"
+         userDropdown.style.display = "none";
+         window.location.href = "./register.html"
     }
 });
 
@@ -411,9 +378,8 @@ signOutBtn.addEventListener("click", signOut);
 updateUI();
 
 // navbar links to sections
-document.addEventListener("DOMContentLoaded", () => {
   const menuItems = document.querySelectorAll(".navBar li");
-  const ServicesBtn = document.querySelectorAll("[data-target]");
+  const ServiceLinks = document.querySelectorAll("[data-target]");
 
   // dashboard li navBar btn navigate to user dashboard and admin dashboard
   const dashboardBtn = document.getElementById("dashboard");
@@ -431,7 +397,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // services button navigation section1 to section4
-  ServicesBtn.forEach(btn => {  
+  ServiceLinks.forEach(btn => {  
     btn.addEventListener("click", () => {
       const targetId = btn.dataset.target;
       const section = document.getElementById(targetId);
@@ -442,7 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-});
+
 
 // courses card navigation to subjects section6
 const courseCards = document.querySelectorAll(".card-name");
@@ -563,9 +529,9 @@ if (subjects.length) {
       const direction = idx < currentSubject ? 'left' : 'right';
       showSubject(idx, direction);
       // toggle active class on buttons
-      fields.forEach(f => f.classList.remove('active-field'));
-      btn.classList.add('active-field');
-      if( btn === active){
+      fields.forEach(f => f.classList.remove('active'));
+      btn.classList.add('active');
+      if( btn.classList.add('active')){
         btn.style.borderBottom = "2px solid gray";
       }else{
         btn.style.borderBottom = "none";
@@ -587,7 +553,6 @@ if (subjects.length) {
     currentPage = (currentPage - 1 + pages) % pages;
     renderPage(subjects[currentSubject], currentPage);
   });
-}
 
 // render a page of .subjects group
 function renderPage(subjectEl, pageIndex) {
@@ -600,18 +565,78 @@ function renderPage(subjectEl, pageIndex) {
 }
 
 // navigate to register from by enrolling the courses
-document.addEventListener('DOMContentLoaded', () => {
-  const isLoggedIn = false; 
   document.querySelectorAll('.enroll-btn').forEach(button => {
     button.addEventListener('click', function() {
-      if (isLoggedIn) {
-        alert('You are enrolled in ' + this.dataset.subject + '!');
-      } else {
+      if (!isLoggedIn()) {
         window.location.href = "./register.html";
-      }
+      } 
+    });
+  });
+}
+ 
+
+// section six hover enrollbtn and active field
+document.addEventListener('DOMContentLoaded', (event) => {
+    const courseFields = document.querySelectorAll(".field");
+
+    courseFields.forEach(field => {
+      field.addEventListener("mouseover", () =>{
+        field.style.transition = "color 0.5s ease-in-out";
+        field.style.backgroundColor = hoverColor;
+    });
+    });
+
+    courseFields.forEach(field => {
+      field.addEventListener("mouseleave", () => {
+        field.style.backgroundColor = "transparent";
+    });
+  }); 
+
+    courseFields.forEach(field => {
+      field.addEventListener("click", () => {
+        courseFields.forEach(sub => {
+          sub.classList.remove("active");
+        });
+      field.classList.add("active");
     });
   });
 });
 
+// ---------- ----------- ----------- ----------- ----------- ----------- ------------
+// enrolled the courses for students
+document.querySelectorAll('.sub').forEach(course => {
+  const enrollBtn = course.querySelector('.enrolled-btn');
 
+  if (!enrollBtn) return;
 
+  enrollBtn.addEventListener('click', () => {
+    if (!isLoggedIn()) {
+      window.location.href = "./register.html";
+      return;
+    }
+
+    const courseData = {
+      id: course.dataset.id || Date.now().toString(),
+      title: course.dataset.title || course.querySelector("h4")?.innerText,
+      image: course.dataset.image || course.querySelector("img")?.src,
+      price: course.dataset.price || ("free"),
+      progress: 0
+    };
+
+    if(!courseData.title || !courseData.image){
+      alert("course data missed!");
+      return;
+    }
+
+    let enrolledCourses = JSON.parse(localStorage.getItem("enrolledCourses")) || [];
+
+    // prevent duplicate enrollment
+    const alreadyEnrolled = enrolledCourses.some(c => c.id === courseData.id);
+    if (!alreadyEnrolled) {
+      enrolledCourses.push(courseData);
+      localStorage.setItem("enrolledCourses", JSON.stringify(enrolledCourses));
+    }
+
+    window.location.href = "./user.html";
+  });
+});
