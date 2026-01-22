@@ -1,0 +1,306 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root{
+    --bg-color: rgba(108, 144, 144, 0.753);
+    --font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    --bg2-color: rgb(249, 250, 250);
+    --btn-color: rgba(151, 214, 159, 0.884);
+    --border-radius: 0.3rem;
+     --color-hover: rgba(151, 202, 195, 0.984);
+}
+
+
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+header{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg2-color);
+    box-shadow: var(--box-shadow);
+}
+
+/* header part */
+.sub-header{
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    gap: 3rem;
+}
+
+.sub-header .searchBar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    >.seachbar-form{
+        width:300px;
+        height: 26px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--border-radius);
+
+        >.search{
+        width: 300px;
+        height:26px;
+        align-self: center;
+        border: none;
+        outline: none;
+        background-color: var(--bg2-color);
+        border-radius: var(--border-radius);
+        padding: 1rem;
+        font-size: 18px;
+        }
+
+        >svg{
+            width: 28px;
+            height: 28px;
+            right: -2rem;
+            position: absolute;
+        }
+    }
+
+}
+
+.seachbar-form svg:hover{
+    transition: all 0.3s ease-in-out;
+    fill: var(--color-hover);
+}
+
+.header-container{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg2-color);
+    box-shadow: var(--box-shadow);
+    gap: 1rem;
+}
+
+.header-container .logo{
+    width: 100%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    
+    >img{
+        width: 230px;
+        height: auto;
+        cursor: pointer;
+    }
+}
+
+.header-container .navBar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    >ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+
+        >li{
+            width: 95px;
+            padding-left: 1rem;
+            padding-bottom: 0.8rem;
+            list-style: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}
+
+.header-container .navBar ul> li:hover{
+    color: var(--color-hover);
+    transition: all 0.5s ease-in-out;
+}
+
+.header-container .navBar ul > li.active {
+    color: var(--color-hover) !important; 
+}
+
+/* login user and admin part */
+.header-container .login{
+    width: 40%;
+    gap: 0.3rem;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 700;
+ 
+    >.fa-user{
+        margin-top: 0.5rem;
+    }
+
+}
+
+/*user dropdown */
+.header-container .user-dropdown{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+    height: auto;
+    padding: 1rem;
+    right: 2rem;
+    top: 6.5rem;
+    background-color: var(--bg-color);
+    z-index: 10;
+}
+
+.header-container .user-dropdown #user{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    >li{
+        list-style: none;
+        cursor: pointer;
+        font-size: 12px;
+    }
+}
+
+.header-container .user-dropdown #sign-out{
+    width: fit-content;
+    padding: 0.2rem 0.5rem;
+    border: none;
+    align-self: flex-end;
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+main .section1{
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .section1 .add-courses{
+    width: 320px;
+    height: 280px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    >input{
+        width: 220px;
+        height: 28px;
+        border: none;
+        outline: none;
+        border-radius: var(--border-radius);
+        padding: 0.5rem 1rem;
+    }
+
+    >button{
+        width: fit-content;
+        align-self: center;
+        height: 28px;
+        padding: 0 1rem;
+        border: none;
+        border-radius: var(--border-radius);
+    }
+}
+
+.section1 .add-courses >button:hover{
+    background-color: var(--btn-color);
+}
+
+/* layout for list beside add form */
+main .section1{
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.display-added-courses{
+    flex: 1;
+    min-height: 280px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--bg2-color);
+    padding: 1rem;
+}
+
+.display-added-courses h2{
+    margin-bottom: 0.8rem;
+}
+
+#courseList{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.course-card{
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.course-card img{
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.course-card .actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.course-card .actions button{
+    border: none;
+    background: var(--bg-color);
+    color: #000;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+

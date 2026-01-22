@@ -5,25 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamix Network LMS</title>
     <link rel="stylesheet" href="./css/user.css">
+    <link rel="stylesheet" href="./css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1>Admin Dashboard</h1>
-
-<!-- Add Course -->
-<section>
-  <h2>Add New Course</h2>
-  <input type="text" id="courseTitle" placeholder="Course title">
-  <input type="text" id="courseDesc" placeholder="Description">
-  <input type="number" id="coursePrice" placeholder="Price">
-  <button onclick="addCourse()">Add Course</button>
-</section>
-
-<!-- Course List -->
-<section>
-  <h2>All Courses</h2>
-  <div id="courseList"></div>
-</section>
+    <header>
+        <div class="sub-header">
+            <div class="searchBar">
+                <form class="seachbar-form" id="searchbardropdown">
+                    <input class="search" type="search" name="" id="search" placeholder="search...." onkeypress="clickEnter(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 640 640"><path d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z"/></svg>
+                </form>
+            </div>
+        </div>
+        <div class="header-container">
+            <div class="logo" id="logo">
+                <img src="./images/logo.lms.jpg" alt="">
+            </div>
+            <div class="navBar">
+                <ul>
+                    <li id="dashboard" class="active">Dashboard</li>
+                    <li id="courses" >Courses</li>
+                    <li id="students" >Students</li>
+                    <li id="assessment" >Assessments</li>
+                    <li id="payment">payment</li>
+                    <li id="trash">Trash</li>
+                </ul>
+            </div>
+            <div class="login" id="login">
+                <i class="fa-regular fa-user fa-xs" style="margin-top: 0.7rem;"></i>
+                <span data-translate data-key="login" class="user">log in</span>
+            </div>
+            <div class="user-dropdown" id="user-dropdown">
+                <ul id="user">
+                    <li id="user-email">example@gmail.com</li>
+                    <hr style="color: rgba(128, 128, 128, 0.066);">
+                    <li id="user-role">Student</li>
+                    <button id="sign-out">sign out</button>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Add Course -->
+        <div class="section1" id="dashboard-section">
+            <div class="add-courses">
+                <h2>Add New Course</h2>
+                <input type="file" id="courseImage" accept="image/*">
+                <input type="text" id="courseTitle" placeholder="Course title">
+                <input type="number" id="coursePrice" placeholder="Price">
+                <button id="addCourseBtn">Add Course</button>
+            </div>
+            <div class="display-added-courses" id="added-courses">
+                <!-- courses render here -->
+                <h2>All Courses</h2>
+                <div id="courseList" class="courseList"></div>
+            </div>
+        </div>
+        <div class="section2" is="all-courses">
+            <!-- display all courses here -->
+        </div>
+        <div class="section3" id="students-report">
+            <!-- students report here how many students enrolled how many courses they completed   -->
+        </div>
+        <div class="section4" ids="assessment">
+            <!-- here all quizez and result displayed and also certified students card here -->
+        </div>
+        <div class="section5" id="payment">
+            <!-- all payment method will display here -->
+        </div>
+        <div class="section6" id="trash">
+            <!-- the deleted course will be here -->
+        </div>
+    </main>
 
 <script src="./JS/admin.js"></script>
 </body>

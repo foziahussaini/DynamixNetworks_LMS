@@ -214,7 +214,7 @@ logoBtn.addEventListener("click", () =>{
 })
 
 // dashboard navigate to dashboard section
-const dashboardSection = document.getElementById("dashboard-container");
+const dashboardSection = document.getElementById("sectkon1");
 const progressSection = document.getElementById("explore-container");
 const myCourses = document.getElementById("courses-container");
 
@@ -409,21 +409,6 @@ document.addEventListener("DOMContentLoaded", () => {
     coursesContainer.appendChild(card);
   });
 
-// update dashboard course counter
-function updateDashboardStats() {
-  const enrolledCourses = JSON.parse(localStorage.getItem("enrolledCourses")) || [];
-
-  const enrolledCount = enrolledCourses.length;
-  const completedCount = enrolledCourses.filter(c => c.progress === 100).length;
-  const inProgressCount = enrolledCourses.filter(c => c.progress > 0 && c.progress < 100).length;
-
-  document.querySelector(".status-item.enrolled h2").innerText = enrolledCount;
-  document.querySelector(".status-item.completed h2").innerText = completedCount;
-  document.querySelector(".status-item.progress h2").innerText = inProgressCount;
-}
-
-updateDashboardStats();
-
 // update course inprogress part dashboard
 const progressTrack = document.querySelector(".courses-track");
 
@@ -446,3 +431,180 @@ enrolledCourses.forEach(course => {
 
 });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- Dashboard: Enrolled Courses List (Top Section) ---
+    const coursesContainer = document.getElementById("enrolled-courses");
+    const enrolledCourses = JSON.parse(localStorage.getItem("enrolledCourses")) || [];
+
+    if (coursesContainer) {
+        coursesContainer.innerHTML = "";
+
+        enrolledCourses.forEach(course => {
+            const card = document.createElement("div");
+            card.className = "course-card";
+             card.innerHTML = `
+                <img src="${course.image}" alt="${course.title}">
+                <h4>${course.title}</h4>
+                <p>${course.price}</p>
+                <button class="resume-btn">Continue</button>
+            `;
+
+            coursesContainer.appendChild(card);
+        });
+    }
+
+    function updateDashboardStats() {
+      const enrolledCount = enrolledCourses.length;
+      const completedCount = enrolledCourses.filter(c => c.progress === 100).length;
+      const inProgressCount = enrolledCourses.filter(c => c.progress > 0 && c.progress < 100).length;
+
+      const enrolledEl = document.querySelector(".status-item.enrolled h2");
+      const completedEl = document.querySelector(".status-item.completed h2");
+      const progressEl = document.querySelector(".status-item.progress h2");
+      
+      if (enrolledEl) enrolledEl.innerText = enrolledCount;
+      if (completedEl) completedEl.innerText = completedCount;
+      if (progressEl) progressEl.innerText = inProgressCount;
+    }
+    updateDashboardStats();
+
+
+    // --- Dashboard: In Progress Course Track (Bottom Section) ---
+    const progressTrack = document.querySelector(".courses-track");
+
+    if (progressTrack) {
+        progressTrack.innerHTML = "";
+          enrolledCourses.forEach(course => {
+            const item = document.createElement("div");
+            item.className = "progress-item";
+
+            item.innerHTML = `
+              <div class="subject">
+                <h5>${course.title}</h5>
+                <button>Resume →</button>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:${course.progress || 2}%"></div>
+              </div>
+              <p>${course.progress || 2}% Complete</p>
+            `;
+             progressTrack.appendChild(item);
+        });
+    };
+  });
+
+  // Function to retrieve all courses from local storage (same as admin.js)
+function getCourses() {
+    return JSON.parse(localStorage.getItem("courses")) || [];
+}
+
+// --- Main Initialization ---
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- Dashboard: Enrolled Courses List & Handlers ---
+    const coursesContainer = document.getElementById("enrolled-courses");
+    const enrolledCourses = JSON.parse(localStorage.getItem("enrolledCourses")) || [];
+    const dashboardContent = document.getElementById("user-dashboard-content");
+    const lessonArea = document.getElementById("course-lesson-area");
+    const backButton = document.getElementById("backToDashboard");
+
+    if (coursesContainer) {
+        coursesContainer.innerHTML = "";
+
+        enrolledCourses.forEach(course => {
+            const card = document.createElement("div");
+            card.className = "course-card";
+            card.setAttribute("data-course-id", course.id); // Add data attribute
+
+            card.innerHTML = `
+                <img src="${course.image}" alt="${course.title}">
+                <h4>${course.title}</h4>
+                <p>${course.price}</p>
+                <button class="resume-btn">Continue</button>
+            `;
+
+            coursesContainer.appendChild(card);
+        });
+
+        // Add event listener for all 'Continue' buttons using event delegation
+        coursesContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('resume-btn')) {
+                const courseId = event.target.closest('.course-card').dataset.courseId;
+                displayCourseContent(courseId);
+            }
+        });
+    }
+
+    // Handle the "Back to Dashboard" button click
+    if (backButton) {
+        backButton.addEventListener('click', () => {
+            dashboardContent.style.display = 'block';
+            lessonArea.style.display = 'none';
+        });
+    }
+    updateDashboardStats();
+});
+
+// --- Function to display Vidoes/Quizzes (The new core logic) ---
+function displayCourseContent(courseId) {
+    const allCourses = getCourses(); 
+    const course = allCourses.find(c => c.id === courseId);
+
+    const dashboardContent = document.getElementById("user-dashboard-content");
+    const lessonArea = document.getElementById("course-lesson-area");
+    const videoArea = document.getElementById("video-display-area");
+    const quizArea = document.getElementById("quiz-display-area");
+    const lessonTitleEl = document.getElementById("lesson-title");
+
+    if (!course) {
+        alert("Course materials not found!");
+        return;
+    }
+
+    // Switch views from dashboard to lesson content
+    dashboardContent.style.display = 'none';
+    lessonArea.style.display = 'block';
+    lessonTitleEl.innerText = `Learning: ${course.title}`;
+    
+    videoArea.innerHTML = '<h4>Videos & Materials</h4>';
+    quizArea.innerHTML = '<h4>Quizzes</h4>';
+
+    // Render Videos
+    if (course.videos && course.videos.length > 0) {
+        course.videos.forEach(video => {
+            if (video.url.includes('youtube.com') || video.url.includes('youtu.be')) {
+                const videoId = video.url.split('v=')[1] || video.url.split('/').pop();
+                videoArea.innerHTML += `
+                    <h5>${video.title}</h5>
+                    <iframe width="560" height="315" src="https://www.youtube.com{videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                `;
+            } else {
+                 videoArea.innerHTML += `
+                    <h5>${video.title}</h5>
+                    <a href="${video.url}" target="_blank">Download/View Material</a>
+                 `;
+            }
+        });
+    } else {
+        videoArea.innerHTML += `<p>No video content uploaded yet.</p>`;
+    }
+
+    if (course.quizzes && course.quizzes.length > 0) {
+        course.quizzes.forEach((quiz, index) => {
+            quizArea.innerHTML += `
+                <div class="quiz-item">
+                    <p><strong>Q${index + 1}:</strong> ${quiz.question}</p>
+                    <p>Options: ${quiz.options.join(', ')}</p>
+                    <p class="answer"><em>(Answer: ${quiz.answer})</em></p>
+                </div>
+            `;
+        });
+    } else {
+        quizArea.innerHTML += `<p>No quizzes available yet.</p>`;
+    }
+}
+
+window.displayCourseContent = displayCourseContent;

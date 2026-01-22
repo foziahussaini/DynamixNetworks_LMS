@@ -172,8 +172,23 @@
             <div class="section1">
                 <div class="first-row">
                     <div class="categories-select-button" id="categoriesBtn">
-                        <div class="categories" id="categories">All Categories</div>
-                        <span class="icon" id="icons"><i class="fa-solid fa-caret-down fa-sm"></i></span>
+                        <div class="option-input">
+                            <div class="categories" id="categories">All Categories</div>
+                            <span class="icon" id="icons"><i class="fa-solid fa-caret-down fa-sm"></i></span>
+                        </div>
+                        <div class="categories-menu" id="categoriesDropdown">
+                            <div id="menu-item" class="menu-item active">All Categories</div>
+                            <div id="menu-item" class="menu-item">Mobile App Development</div>
+                            <div id="menu-item" class="menu-item">Mathematics</div>
+                            <div id="menu-item" class="menu-item">Web Development</div>
+                            <div id="menu-item" class="menu-item">Programming & <br>Software Development</div>
+                            <div id="menu-item" class="menu-item">Graphic Design</div>
+                            <div id="menu-item" class="menu-item">Game Development</div>
+                            <div id="menu-item" class="menu-item">Clout Computing</div>
+                            <div id="menu-item" class="menu-item">Data Science</div>
+                            <div id="menu-item" class="menu-item">Digital Marketing</div>
+                            <div id="menu-item" class="menu-item">AI Fundamental</div>
+                        </div>
                     </div>
                     <div class="search-option">
                         <input type="search" name="" id="my-courses-search" placeholder="search by title">
@@ -184,23 +199,24 @@
                         <p style="font-size: 14px; font-weight: 600;">Complete Courses</p>
                     </div>
                 </div>
-                <div class="categories-menu" id="categoriesDropdown">
-                    <div id="menu-item" class="menu-item active">All Categories</div>
-                    <div id="menu-item" class="menu-item">Mobile App Development</div>
-                    <div id="menu-item" class="menu-item">Mathematics</div>
-                    <div id="menu-item" class="menu-item">Web Development</div>
-                    <div id="menu-item" class="menu-item">Programming & <br>Software Development</div>
-                    <div id="menu-item" class="menu-item">Graphic Design</div>
-                    <div id="menu-item" class="menu-item">Game Development</div>
-                    <div id="menu-item" class="menu-item">Clout Computing</div>
-                    <div id="menu-item" class="menu-item">Data Science</div>
-                    <div id="menu-item" class="menu-item">Digital Marketing</div>
-                    <div id="menu-item" class="menu-item">AI Fundamental</div>
-                </div>
             </div>
             <div class="section2 my-courses">
                 <div class="courses-grid" id="enrolled-courses"></div>
             </div>
+        </div>
+        <!-- course material area -->
+
+        <div id="course-lesson-area" style="display: none;">
+           <button id="backToDashboard">← Back to Dashboard</button>
+           <h2 id="lesson-title">Course Title</h2>
+        <div id="video-display-area">
+        <!-- Videos will be embedded here -->
+        </div>
+        <div id="quiz-display-area">
+        <!-- Quizzes will be displayed here -->
+        </div>
+        </div>
+        <div id="user-dashboard-content">
         </div>
     </main>
     <footer>
