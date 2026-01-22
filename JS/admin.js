@@ -8,10 +8,10 @@ logoBtn.addEventListener("click", () =>{
 // navBar
 const dashboardBtn = document.getElementById("dashboard");
 const Coursesbtn = document.getElementById("courses");
-const studentsbtn = document.getElementById("students"); 
-const assessmentbtn = document.getElementById("assessment");
-const paymentbtn = document.getElementById("payment");
-const trashbtn = document.getElementById("trash");
+const studentsbtn = document.getElementById("students-btn"); 
+const assessmentbtn = document.getElementById("assessment-btn");
+const paymentbtn = document.getElementById("payment-btn");
+const trashbtn = document.getElementById("trash-btn");
 const loginIcon = document.getElementById("login")
 
 // linked to css variable rootstyles
@@ -24,12 +24,12 @@ function CssVaraible(variableName) {
 const hoverColor = CssVaraible('--color-hover');
 const defaultColor = CssVaraible('--text-color');
 
-const dashboardSection = document.getElementById("dashboard-section");
-const CoursesSection = document.getElementById("all-courses");
-const studentsSection = document.getElementById("students-report");
-const assessmentSection = document.getElementById("assessment");
-const paymentSection = document.getElementById("payment");
-const trashSection = document.getElementById("trash");
+const dashboardSection = document.querySelector(".section1");
+const CoursesSection = document.querySelector(".section2");
+const studentsSection = document.querySelector(".section3");
+const assessmentSection = document.querySelector(".section4");
+const paymentSection = document.querySelector(".section5");
+const trashSection = document.querySelector(".section6");
 
 // active navmenu items
 function setActiveNav(activeItem) {

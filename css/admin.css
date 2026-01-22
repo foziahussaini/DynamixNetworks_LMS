@@ -159,6 +159,11 @@ header{
 
 }
 
+.header-container .login:hover{
+    color: var(--color-hover);
+    transition: all 0.3s ease-in-out;
+}
+
 /*user dropdown */
 .header-container .user-dropdown{
     position: absolute;
