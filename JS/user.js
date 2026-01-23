@@ -190,9 +190,9 @@ language.forEach((option) => {
 // --------------------- --------------------- --------------------- ---------------------
 // header part
 const logoBtn = document.getElementById("logo");
-const dashboard = document.getElementById("dashboard");
-const myCourseBtn = document.getElementById("my-courses");
-const progress = document.getElementById("explore"); 
+const dashboard = document.querySelector("#dashboard");
+const myCourseBtn = document.querySelector("#my-courses");
+const progress = document.querySelector("#explore"); 
 const langIcon = document.getElementById("lang-text");
 const fullScreen = document.getElementById("toggle-screen");
 const notif = document.getElementById("notification");
@@ -214,7 +214,7 @@ logoBtn.addEventListener("click", () =>{
 })
 
 // dashboard navigate to dashboard section
-const dashboardSection = document.getElementById("sectkon1");
+const dashboardSection = document.getElementById("dashboard-container");
 const progressSection = document.getElementById("explore-container");
 const myCourses = document.getElementById("courses-container");
 
