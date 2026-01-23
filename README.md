@@ -1,6 +1,9 @@
 # DynamixNetworks_LMS
 A web-based Learning Management System (LMS) build with HTML,CSS, and JavaScript that allows students to enroll in courses, track progress, and take quizzes, while admins manage content and monitor performance.
 
+## Live Demo
+ https://foziahussaini.github.io/DynamixNetworks_LMS/
+
 # Features
 
 **User Authentication**
@@ -28,7 +31,7 @@ A web-based Learning Management System (LMS) build with HTML,CSS, and JavaScript
 # How to Run the Project
 
 1 **Clone the repository**
-
+``` Bash
 git clone https://github.com/foziahussaini/DynamixNetworks_LMS.git
 
 
